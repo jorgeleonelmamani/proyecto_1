@@ -1,0 +1,359 @@
+
+
+
+/* ============================================================
+   HERO INTERNO 
+============================================================ */
+.page-hero {
+  background:
+    linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
+    url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&q=80')
+    center / cover no-repeat;
+  padding: 5rem 1rem 4rem;
+  text-align: center;
+  color: #fff;
+}
+
+.page-hero-content { max-width: 600px; margin-inline: auto; }
+
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  margin: var(--space-sm) 0;
+  line-height: 1.15;
+}
+
+.page-hero-sub {
+  font-size: 1.05rem;
+  opacity: .88;
+}
+
+/* Link activo en el nav */
+.nav-active {
+  color: var(--color-primary) !important;
+  background: var(--color-surface2) !important;
+}
+
+
+/* ============================================================
+   FILTROS 
+============================================================ */
+
+/* Esconder los radio buttons reales */
+.filtro-input { display: none; }
+
+/* Contenedor de botones */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+/* Cada botón es un <label> */
+.filtro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: .5rem 1.2rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition),
+              color var(--transition), transform var(--transition);
+}
+.filtro-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Botón activo: */
+#f-todos:checked        ~ .filtros label[for="f-todos"],
+#f-cultural:checked     ~ .filtros label[for="f-cultural"],
+#f-naturaleza:checked   ~ .filtros label[for="f-naturaleza"],
+#f-playa:checked        ~ .filtros label[for="f-playa"],
+#f-gastronomico:checked ~ .filtros label[for="f-gastronomico"],
+#f-religioso:checked    ~ .filtros label[for="f-religioso"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(200,98,42,.35);
+}
+
+
+/* ============================================================
+   GALERÍA MASONRY con CSS Grid
+   Columnas de ancho fijo, las filas se "auto-fit" por altura
+============================================================ */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: 200px;   /* altura base de cada celda */
+  gap: var(--space-md);
+  grid-auto-flow: dense;   /* rellena huecos automáticamente */
+}
+
+/* Tarjeta de destino */
+.dest-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Variante alta: ocupa 2 filas */
+.dest-item.tall  { grid-row: span 2; }
+
+/* Variante ancha: ocupa 2 columnas */
+.dest-item.wide  { grid-column: span 2; }
+
+/* Imagen con clip-path para forma creativa */
+.dest-item-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.dest-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  /* Clip-path: forma diagonal */
+  clip-path: inset(0 0 0 0);
+}
+
+/* Zoom al hacer hover */
+.dest-item:hover .dest-item-img img,
+.dest-item:focus .dest-item-img img {
+  transform: scale(1.08);
+}
+
+/* Overlay con info — aparece al hover */
+.dest-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,6,0,.85) 0%,
+    rgba(10,6,0,.2) 60%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+  color: #fff;
+  /* Oculto por defecto */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.dest-item:hover .dest-item-overlay,
+.dest-item:focus .dest-item-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dest-item-overlay h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.dest-item-overlay p {
+  font-size: .82rem;
+  opacity: .85;
+  margin-bottom: var(--space-sm);
+}
+
+/* Botón outline blanco para el overlay */
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  padding: .35rem .9rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255,255,255,.7);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+  background: transparent;
+  transition: background var(--transition);
+  align-self: flex-start;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,.2); }
+
+
+
+/* Por defecto todos visibles */
+.dest-item { display: block; }
+
+/* Cuando se elige una categoría específica,
+   primero ocultar todos... */
+#f-cultural:checked     ~ .masonry-grid .dest-item,
+#f-naturaleza:checked   ~ .masonry-grid .dest-item,
+#f-playa:checked        ~ .masonry-grid .dest-item,
+#f-gastronomico:checked ~ .masonry-grid .dest-item,
+#f-religioso:checked    ~ .masonry-grid .dest-item {
+  display: none;
+}
+
+/* ...luego mostrar solo los que corresponden */
+#f-cultural:checked     ~ .masonry-grid .cat-cultural,
+#f-naturaleza:checked   ~ .masonry-grid .cat-naturaleza,
+#f-playa:checked        ~ .masonry-grid .cat-playa,
+#f-gastronomico:checked ~ .masonry-grid .cat-gastronomico,
+#f-religioso:checked    ~ .masonry-grid .cat-religioso {
+  display: block;
+}
+
+/* Cuando "Todos" está activo → todo visible */
+#f-todos:checked ~ .masonry-grid .dest-item { display: block; }
+
+
+/* ============================================================
+   TABLA RESPONSIVA
+============================================================ */
+.tabla-section { background: var(--color-surface2); }
+
+/* Wrapper que agrega scroll horizontal en mobile */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 24px var(--color-shadow);
+}
+
+.precio-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  font-size: .92rem;
+}
+
+.precio-tabla thead {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.precio-tabla th {
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  font-weight: 700;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+.precio-tabla tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition);
+}
+
+/* Efecto hover en filas */
+.precio-tabla tbody tr:hover {
+  background: var(--color-surface2);
+}
+
+.precio-tabla td {
+  padding: var(--space-md) var(--space-lg);
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+/* Tags de categoría */
+.tag {
+  display: inline-block;
+  padding: .2rem .65rem;
+  border-radius: var(--radius-pill);
+  font-size: .78rem;
+  font-weight: 700;
+}
+.tag-cultural     { background: #fff3e0; color: #e65100; }
+.tag-naturaleza   { background: #e8f5e9; color: #2e7d32; }
+.tag-playa        { background: #e3f2fd; color: #1565c0; }
+.tag-gastro       { background: #fce4ec; color: #c62828; }
+.tag-religioso    { background: #f3e5f5; color: #6a1b9a; }
+
+/* Estado disponibilidad */
+.disponible { color: #2e7d32; font-weight: 600; }
+.agotado    { color: #c62828; font-weight: 600; }
+
+.tabla-nota {
+  font-size: .82rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+
+@media (max-width: 640px) {
+
+  .table-wrap { border: none; box-shadow: none; overflow: visible; }
+
+  .precio-tabla thead { display: none; } /* esconder encabezados */
+
+  .precio-tabla tbody tr {
+    display: block;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-surface);
+    box-shadow: 0 2px 12px var(--color-shadow);
+  }
+
+  .precio-tabla td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) 0;
+    border: none;
+    font-size: .88rem;
+  }
+
+  /* Mostrar el nombre de la columna antes del valor */
+  .precio-tabla td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--color-text-muted);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin-right: var(--space-sm);
+    flex-shrink: 0;
+  }
+}
+
+/* ============================================================
+   MASONRY RESPONSIVO
+============================================================ */
+@media (max-width: 800px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dest-item.wide { grid-column: span 1; }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+  .dest-item.tall { grid-row: span 1; }
+  .dest-item.wide { grid-column: span 1; }
+  /* En mobile el overlay siempre visible */
+  .dest-item-overlay { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,375 @@
+/* ============================================================
+   blog.css — Diseño tipo revista, filtros, avatares CSS,
+              scroll reveal
+============================================================ */
+
+.page-hero {
+  background:
+    linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
+    url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&q=80')
+    center / cover no-repeat;
+  padding: 5rem 1rem 4rem;
+  text-align: center;
+  color: #fff;
+}
+.page-hero-blog {
+  background-image:
+    linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
+    url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1400&q=80');
+}
+.page-hero-content { max-width: 600px; margin-inline: auto; }
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  margin: var(--space-sm) 0;
+}
+.page-hero-sub { font-size: 1.05rem; opacity: .88; }
+
+.nav-active {
+  color: var(--color-primary) !important;
+  background: var(--color-surface2) !important;
+}
+
+/* ============================================================
+   FILTROS DE CATEGORÍA — mismo patrón que destinos
+============================================================ */
+.blog-section { background: var(--color-bg); }
+
+.blog-filtro-input { display: none; }
+
+.blog-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.filtro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: .5rem 1.2rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition),
+              color var(--transition), transform var(--transition);
+}
+.filtro-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Botón activo */
+#bf-todos:checked    ~ .blog-filtros label[for="bf-todos"],
+#bf-viaje:checked    ~ .blog-filtros label[for="bf-viaje"],
+#bf-cultura:checked  ~ .blog-filtros label[for="bf-cultura"],
+#bf-tips:checked     ~ .blog-filtros label[for="bf-tips"],
+#bf-gastrono:checked ~ .blog-filtros label[for="bf-gastrono"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Filtrado: ocultar/mostrar artículos */
+#bf-viaje:checked    ~ .newspaper-grid .blog-card,
+#bf-cultura:checked  ~ .newspaper-grid .blog-card,
+#bf-tips:checked     ~ .newspaper-grid .blog-card,
+#bf-gastrono:checked ~ .newspaper-grid .blog-card { display: none; }
+
+#bf-viaje:checked    ~ .newspaper-grid .cat-viaje    { display: flex; }
+#bf-cultura:checked  ~ .newspaper-grid .cat-cultura  { display: flex; }
+#bf-tips:checked     ~ .newspaper-grid .cat-tips     { display: flex; }
+#bf-gastrono:checked ~ .newspaper-grid .cat-gastrono { display: flex; }
+#bf-todos:checked    ~ .newspaper-grid .blog-card    { display: flex; }
+
+/* ============================================================
+   DISEÑO TIPO NEWSPAPER — CSS Grid con áreas
+============================================================ */
+.newspaper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: var(--space-lg);
+}
+
+/* Artículo base */
+.blog-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px var(--color-shadow);
+}
+
+/* Artículo destacado: ocupa 2 columnas y está primero */
+.blog-card--featured {
+  grid-column: span 2;
+  flex-direction: row;
+}
+.blog-card--featured .blog-card-img {
+  width: 55%;
+  flex-shrink: 0;
+  position: relative;
+}
+.blog-card--featured .blog-card-body { padding: var(--space-xl); }
+.blog-card--featured .blog-card-title { font-size: 1.5rem; }
+
+/* Imagen */
+.blog-card-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.blog-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+.blog-card:hover .blog-card-img img { transform: scale(1.05); }
+
+/* Overlay sutil en imagen destacada */
+.blog-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(10,6,0,.3));
+}
+
+/* Cuerpo */
+.blog-card-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.blog-card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  flex: 1;
+}
+
+.blog-card-excerpt {
+  font-size: .88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Tags */
+.blog-tags { display: flex; gap: var(--space-xs); flex-wrap: wrap; }
+.blog-tag {
+  display: inline-block;
+  padding: .2rem .65rem;
+  border-radius: var(--radius-pill);
+  font-size: .75rem;
+  font-weight: 700;
+}
+.blog-tag--viaje    { background: #e3f2fd; color: #1565c0; }
+.blog-tag--cultura  { background: #fff3e0; color: #e65100; }
+.blog-tag--tips     { background: #e8f5e9; color: #2e7d32; }
+.blog-tag--gastrono { background: #fce4ec; color: #c62828; }
+.blog-tag--featured { background: var(--color-accent); color: var(--color-text); }
+
+/* Meta del artículo */
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  gap: var(--space-sm);
+}
+
+.blog-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.blog-author strong { display: block; font-size: .85rem; font-weight: 700; }
+.blog-author time   { font-size: .78rem; color: var(--color-text-muted); }
+
+.read-time { font-size: .78rem; color: var(--color-text-muted); white-space: nowrap; }
+
+/* ============================================================
+   AVATARES CON CSS + PSEUDOELEMENTOS
+   El avatar se crea con un div de color + ::after que muestra
+   las iniciales. No hay texto en el HTML, todo CSS.
+============================================================ */
+.author-avatar,
+.com-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Iniciales desde el atributo data-iniciales */
+.com-avatar::after {
+  content: attr(data-iniciales);
+}
+
+/* Variantes de color */
+.author-avatar--verde, .com-avatar--verde   { background: #2e7d32; }
+.author-avatar--azul,  .com-avatar--azul    { background: #1565c0; }
+.author-avatar--rojo,  .com-avatar--rojo    { background: #c62828; }
+.author-avatar--naranja, .com-avatar--naranja { background: #e65100; }
+
+/* Iniciales fijas para author-avatar (sin data-attribute) */
+.blog-card:nth-child(1) .author-avatar::after,
+.blog-card:nth-child(5) .author-avatar::after { content: 'MR'; }
+.blog-card:nth-child(2) .author-avatar::after { content: 'SP'; }
+.blog-card:nth-child(3) .author-avatar::after { content: 'LG'; }
+.blog-card:nth-child(4) .author-avatar::after { content: 'AM'; }
+.blog-card:nth-child(6) .author-avatar::after { content: 'SP'; }
+
+/* ============================================================
+   SCROLL REVEAL
+   Los elementos con .reveal empiezan invisibles y abajo.
+   La clase .revealed (agregada con JS) los hace aparecer.
+============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   SECCIÓN DE COMENTARIOS
+============================================================ */
+.comentarios-section { background: var(--color-surface2); }
+
+.comentarios-wrap { max-width: 760px; }
+
+.comentarios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Comentario individual */
+.comentario {
+  display: flex;
+  gap: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  transition: box-shadow var(--transition);
+}
+.comentario:hover { box-shadow: 0 4px 20px var(--color-shadow); }
+
+/* Avatar del comentario (más grande) */
+.com-avatar {
+  width: 48px; height: 48px;
+  font-size: .9rem;
+  flex-shrink: 0;
+}
+
+.com-body { flex: 1; display: flex; flex-direction: column; gap: var(--space-xs); }
+
+.com-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+.com-nombre { font-size: .95rem; font-weight: 700; }
+.com-fecha  { font-size: .78rem; color: var(--color-text-muted); }
+.com-texto  { font-size: .9rem; color: var(--color-text-muted); line-height: 1.6; }
+
+.com-like {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: .2rem .65rem;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.com-like:hover {
+  background: var(--color-surface2);
+  transform: scale(1.05);
+}
+
+/* Formulario de nuevo comentario */
+.nuevo-comentario {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+.nuevo-com-titulo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+.com-form { display: flex; flex-direction: column; gap: var(--space-md); }
+.com-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+
+/* Inputs del formulario comentario (hereda de styles.css) */
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: .88rem; font-weight: 600; }
+.form-input {
+  padding: .7rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: .95rem;
+  transition: border-color var(--transition);
+}
+.form-input:focus { outline: none; border-color: var(--color-primary); }
+.form-input:not(:placeholder-shown):valid   { border-color: #4caf50; }
+.form-input:not(:placeholder-shown):invalid { border-color: #e53935; }
+.form-textarea { resize: vertical; min-height: 100px; }
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+@media (max-width: 900px) {
+  .newspaper-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-card--featured {
+    grid-column: span 2;
+    flex-direction: column;
+  }
+  .blog-card--featured .blog-card-img { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .newspaper-grid { grid-template-columns: 1fr; }
+  .blog-card--featured { grid-column: span 1; }
+  .com-form-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agencias – EleAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/agencias.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="ViajAR inicio">
+      <svg class="logo-svg" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" class="logo-circle"/>
+        <path d="M14 30 Q24 10 34 30" class="logo-path" fill="none" stroke-width="3"/>
+        <circle cx="24" cy="20" r="4" class="logo-dot"/>
+      </svg>
+      <span>Ele<em>AR</em></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul class="nav-list" role="list">
+        <li class="nav-item has-mega">
+          <a href="#" class="nav-link" aria-haspopup="true">Destinos</a>
+          <div class="mega-menu" role="region" aria-label="Submenú Destinos">
+            <div class="mega-col">
+              <h3 class="mega-title">Por Región</h3>
+              <ul>
+                <li><a href="destino.html">Noroeste (NOA)</a></li>
+                <li><a href="destino.html">Patagonia</a></li>
+                <li><a href="destino.html">Litoral</a></li>
+                <li><a href="destino.html">Cuyo</a></li>
+              </ul>
+            </div>
+            <div class="mega-col mega-featured">
+              <h3 class="mega-title">Destacado</h3>
+              <div class="mega-card">
+                <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=260&q=70" alt="Quebrada de Humahuaca" />
+                <span>Quebrada de Humahuaca</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item has-mega">
+          <a href="#" class="nav-link nav-active" aria-haspopup="true">Agencias</a>
+          <div class="mega-menu" role="region" aria-label="Submenú Agencias">
+            <div class="mega-col">
+              <h3 class="mega-title">Explorar</h3>
+              <ul>
+                <li><a href="agencias.html">Todas las Agencias</a></li>
+                <li><a href="agencias.html">Mejor Valoradas</a></li>
+                <li><a href="agencias.html">Nuevas</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item has-mega">
+          <a href="#" class="nav-link" aria-haspopup="true">Precios</a>
+          <div class="mega-menu" role="region" aria-label="Submenú Precios">
+            <div class="mega-col">
+              <h3 class="mega-title">Planes</h3>
+              <ul>
+                <li><a href="precios.html">Económico</a></li>
+                <li><a href="precios.html">Estándar</a></li>
+                <li><a href="precios.html">Premium</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO INTERNO
+============================================================ -->
+<section class="page-hero page-hero-agencias" aria-label="Encabezado de página">
+  <div class="page-hero-content">
+    <p class="section-tag">Nuestros socios</p>
+    <h1 class="page-hero-title">Agencias de Viaje</h1>
+    <p class="page-hero-sub">Tu próximo destino comienza aquí.</p>
+  </div>
+</section>
+
+
+<section class="section agencias-section" aria-labelledby="agencias-heading">
+  <div class="container">
+
+    <div class="section-head">
+      <p class="section-tag">Perfiles interactivos</p>
+      <h2 id="agencias-heading" class="section-title">Nuestras Agencias</h2>
+      
+    </div>
+
+    <div class="agencias-grid">
+
+      <!-- AGENCIA 1 -->
+      <div class="flip-card" tabindex="0" aria-label="Agencia Horizonte Sur — ver detalles">
+        <div class="flip-inner">
+
+          <!-- FRENTE -->
+          <div class="flip-front">
+            <div class="flip-avatar" aria-hidden="true">HS</div>
+            <h3 class="flip-nombre">Horizonte Sur</h3>
+            <p class="flip-ciudad">📍 Salta, Argentina</p>
+
+            <!-- Rating solo CSS -->
+            <div class="rating" aria-label="Puntuación: 5 de 5 estrellas">
+              <input type="radio" name="r1" id="r1-5" value="5" checked class="star-input" /><label for="r1-5" class="star" aria-label="5 estrellas">★</label>
+              <input type="radio" name="r1" id="r1-4" value="4" class="star-input" /><label for="r1-4" class="star" aria-label="4 estrellas">★</label>
+              <input type="radio" name="r1" id="r1-3" value="3" class="star-input" /><label for="r1-3" class="star" aria-label="3 estrellas">★</label>
+              <input type="radio" name="r1" id="r1-2" value="2" class="star-input" /><label for="r1-2" class="star" aria-label="2 estrellas">★</label>
+              <input type="radio" name="r1" id="r1-1" value="1" class="star-input" /><label for="r1-1" class="star" aria-label="1 estrella">★</label>
+            </div>
+
+            <p class="flip-hint"> Pasá el cursor para más info</p>
+          </div>
+
+          <!-- DORSO -->
+          <div class="flip-back">
+            <h3 class="flip-nombre-back">Horizonte Sur</h3>
+            <ul class="flip-detalles">
+              <li>🗓️ Fundada en 2008</li>
+              <li>✈️ Especialidad: NOA y Puna</li>
+              <li>👥 +2.400 viajeros atendidos</li>
+              <li>🏆 Premio excelencia 2023</li>
+              <li>📞 +54 387 412-3456</li>
+              <li>🌐 horizontesur.com.ar</li>
+            </ul>
+            <a href="contacto.html" class="btn btn-primary btn-sm">Contactar</a>
+          </div>
+
+        </div>
+      </div><!-- /flip-card -->
+
+      <!-- AGENCIA 2 -->
+      <div class="flip-card" tabindex="0" aria-label="Agencia PatagoniaViva — ver detalles">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-avatar flip-avatar--verde" aria-hidden="true">PV</div>
+            <h3 class="flip-nombre">PatagoniaViva</h3>
+            <p class="flip-ciudad">📍 Bariloche, Río Negro</p>
+            <div class="rating" aria-label="Puntuación: 4 de 5 estrellas">
+              <input type="radio" name="r2" id="r2-5" value="5" class="star-input" /><label for="r2-5" class="star">★</label>
+              <input type="radio" name="r2" id="r2-4" value="4" checked class="star-input" /><label for="r2-4" class="star">★</label>
+              <input type="radio" name="r2" id="r2-3" value="3" class="star-input" /><label for="r2-3" class="star">★</label>
+              <input type="radio" name="r2" id="r2-2" value="2" class="star-input" /><label for="r2-2" class="star">★</label>
+              <input type="radio" name="r2" id="r2-1" value="1" class="star-input" /><label for="r2-1" class="star">★</label>
+            </div>
+            <p class="flip-hint"> Pasá el cursor para más info</p>
+          </div>
+          <div class="flip-back">
+            <h3 class="flip-nombre-back">PatagoniaViva</h3>
+            <ul class="flip-detalles">
+              <li>🗓️ Fundada en 2015</li>
+              <li>✈️ Especialidad: Patagonia y glaciares</li>
+              <li>👥 +1.800 viajeros atendidos</li>
+              <li>🏆 Top 10 Agencias 2024</li>
+              <li>📞 +54 294 442-7890</li>
+              <li>🌐 patagoniaviva.tur.ar</li>
+            </ul>
+            <a href="contacto.html" class="btn btn-primary btn-sm">Contactar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AGENCIA 3 -->
+      <div class="flip-card" tabindex="0" aria-label="Agencia Litoral Tours — ver detalles">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-avatar flip-avatar--azul" aria-hidden="true">LT</div>
+            <h3 class="flip-nombre">Litoral Tours</h3>
+            <p class="flip-ciudad">📍 Posadas, Misiones</p>
+            <div class="rating" aria-label="Puntuación: 5 de 5 estrellas">
+              <input type="radio" name="r3" id="r3-5" value="5" checked class="star-input" /><label for="r3-5" class="star">★</label>
+              <input type="radio" name="r3" id="r3-4" value="4" class="star-input" /><label for="r3-4" class="star">★</label>
+              <input type="radio" name="r3" id="r3-3" value="3" class="star-input" /><label for="r3-3" class="star">★</label>
+              <input type="radio" name="r3" id="r3-2" value="2" class="star-input" /><label for="r3-2" class="star">★</label>
+              <input type="radio" name="r3" id="r3-1" value="1" class="star-input" /><label for="r3-1" class="star">★</label>
+            </div>
+            <p class="flip-hint"> Pasá el cursor para más info</p>
+          </div>
+          <div class="flip-back">
+            <h3 class="flip-nombre-back">Litoral Tours</h3>
+            <ul class="flip-detalles">
+              <li>🗓️ Fundada en 2011</li>
+              <li>✈️ Especialidad: Iguazú y Litoral</li>
+              <li>👥 +3.100 viajeros atendidos</li>
+              <li>🏆 Agencia del Año 2022</li>
+              <li>📞 +54 376 444-1234</li>
+              <li>🌐 litoraltours.com.ar</li>
+            </ul>
+            <a href="contacto.html" class="btn btn-primary btn-sm">Contactar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AGENCIA 4 -->
+      <div class="flip-card" tabindex="0" aria-label="Agencia Cuyo Viajes — ver detalles">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-avatar flip-avatar--violeta" aria-hidden="true">CV</div>
+            <h3 class="flip-nombre">Cuyo Viajes</h3>
+            <p class="flip-ciudad">📍 Mendoza, Argentina</p>
+            <div class="rating" aria-label="Puntuación: 4 de 5 estrellas">
+              <input type="radio" name="r4" id="r4-5" value="5" class="star-input" /><label for="r4-5" class="star">★</label>
+              <input type="radio" name="r4" id="r4-4" value="4" checked class="star-input" /><label for="r4-4" class="star">★</label>
+              <input type="radio" name="r4" id="r4-3" value="3" class="star-input" /><label for="r4-3" class="star">★</label>
+              <input type="radio" name="r4" id="r4-2" value="2" class="star-input" /><label for="r4-2" class="star">★</label>
+              <input type="radio" name="r4" id="r4-1" value="1" class="star-input" /><label for="r4-1" class="star">★</label>
+            </div>
+            <p class="flip-hint"> Pasá el cursor para más info</p>
+          </div>
+          <div class="flip-back">
+            <h3 class="flip-nombre-back">Cuyo Viajes</h3>
+            <ul class="flip-detalles">
+              <li>🗓️ Fundada en 2005</li>
+              <li>✈️ Especialidad: Vinos y montaña</li>
+              <li>👥 +4.500 viajeros atendidos</li>
+              <li>🏆 Mejor Agencia Cuyo 2023</li>
+              <li>📞 +54 261 423-5678</li>
+              <li>🌐 cuyoviajes.tur.ar</li>
+            </ul>
+            <a href="contacto.html" class="btn btn-primary btn-sm">Contactar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AGENCIA 5 -->
+      <div class="flip-card" tabindex="0" aria-label="Agencia BuenosViajes — ver detalles">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-avatar flip-avatar--rojo" aria-hidden="true">BV</div>
+            <h3 class="flip-nombre">BuenosViajes</h3>
+            <p class="flip-ciudad">📍 Buenos Aires, CABA</p>
+            <div class="rating" aria-label="Puntuación: 5 de 5 estrellas">
+              <input type="radio" name="r5" id="r5-5" value="5" checked class="star-input" /><label for="r5-5" class="star">★</label>
+              <input type="radio" name="r5" id="r5-4" value="4" class="star-input" /><label for="r5-4" class="star">★</label>
+              <input type="radio" name="r5" id="r5-3" value="3" class="star-input" /><label for="r5-3" class="star">★</label>
+              <input type="radio" name="r5" id="r5-2" value="2" class="star-input" /><label for="r5-2" class="star">★</label>
+              <input type="radio" name="r5" id="r5-1" value="1" class="star-input" /><label for="r5-1" class="star">★</label>
+            </div>
+            <p class="flip-hint"> Pasá el cursor para más info</p>
+          </div>
+          <div class="flip-back">
+            <h3 class="flip-nombre-back">BuenosViajes</h3>
+            <ul class="flip-detalles">
+              <li>🗓️ Fundada en 2000</li>
+              <li>✈️ Especialidad: City tours y tango</li>
+              <li>👥 +8.000 viajeros atendidos</li>
+              <li>🏆 Premio Nacional Turismo</li>
+              <li>📞 +54 11 4321-9876</li>
+              <li>🌐 buenosviajes.com.ar</li>
+            </ul>
+            <a href="contacto.html" class="btn btn-primary btn-sm">Contactar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AGENCIA 6 -->
+      <div class="flip-card" tabindex="0" aria-label="Agencia Córdoba Rutas — ver detalles">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-avatar flip-avatar--naranja" aria-hidden="true">CR</div>
+            <h3 class="flip-nombre">Córdoba Rutas</h3>
+            <p class="flip-ciudad">📍 Córdoba, Argentina</p>
+            <div class="rating" aria-label="Puntuación: 4 de 5 estrellas">
+              <input type="radio" name="r6" id="r6-5" value="5" class="star-input" /><label for="r6-5" class="star">★</label>
+              <input type="radio" name="r6" id="r6-4" value="4" checked class="star-input" /><label for="r6-4" class="star">★</label>
+              <input type="radio" name="r6" id="r6-3" value="3" class="star-input" /><label for="r6-3" class="star">★</label>
+              <input type="radio" name="r6" id="r6-2" value="2" class="star-input" /><label for="r6-2" class="star">★</label>
+              <input type="radio" name="r6" id="r6-1" value="1" class="star-input" /><label for="r6-1" class="star">★</label>
+            </div>
+            <p class="flip-hint"> Pasá el cursor para más info</p>
+          </div>
+          <div class="flip-back">
+            <h3 class="flip-nombre-back">Córdoba Rutas</h3>
+            <ul class="flip-detalles">
+              <li>🗓️ Fundada en 2013</li>
+              <li>✈️ Especialidad: Sierras y aventura</li>
+              <li>👥 +2.900 viajeros atendidos</li>
+              <li>🏆 Mejor Guía de Sierras 2024</li>
+              <li>📞 +54 351 467-2345</li>
+              <li>🌐 cordobarutas.tur.ar</li>
+            </ul>
+            <a href="contacto.html" class="btn btn-primary btn-sm">Contactar</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /agencias-grid -->
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4 class="footer-title">Suscribite al Newsletter</h4>
+      <p>Recibí ofertas exclusivas y novedades de destinos cada semana.</p>
+      <form class="newsletter-form" novalidate aria-label="Formulario newsletter">
+        <label for="newsletter-email" class="sr-only">Correo electrónico</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="tu@email.com" required aria-required="true" />
+        <button type="submit" class="btn btn-primary btn-sm">Suscribirse</button>
+      </form>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Sitio</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destino.html">Destinos</a></li>
+        <li><a href="agencias.html">Agencias</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Redes Sociales</h4>
+      <div class="social-links" role="list">
+        <a href="#" class="social-btn" role="listitem" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a href="#" class="social-btn" role="listitem" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Encontranos</h4>
+      <div class="map-embed" role="region" aria-label="Mapa de ubicación">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.332%2C-24.236%2C-65.277%2C-24.185&layer=mapnik&marker=-24.211%2C-65.305" title="Mapa" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <p class="footer-address">📍 San Salvador de Jujuy, Argentina</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ElejAR.</p>
+    <p>Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

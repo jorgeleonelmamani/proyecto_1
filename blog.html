@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – EleAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="ViajAR inicio">
+      <svg class="logo-svg" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" class="logo-circle"/>
+        <path d="M14 30 Q24 10 34 30" class="logo-path" fill="none" stroke-width="3"/>
+        <circle cx="24" cy="20" r="4" class="logo-dot"/>
+      </svg>
+      <span>Ele<em>AR</em></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul class="nav-list" role="list">
+        <li class="nav-item has-mega">
+          <a href="#" class="nav-link" aria-haspopup="true">Destinos</a>
+          <div class="mega-menu" role="region">
+            <div class="mega-col">
+              <h3 class="mega-title">Por Región</h3>
+              <ul>
+                <li><a href="destino.html">Noroeste (NOA)</a></li>
+                <li><a href="destino.html">Patagonia</a></li>
+                <li><a href="destino.html">Litoral</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="agencias.html" class="nav-link">Agencias</a></li>
+        <li class="nav-item"><a href="precios.html"  class="nav-link">Precios</a></li>
+        <li class="nav-item"><a href="blog.html"     class="nav-link nav-active">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO INTERNO -->
+<section class="page-hero page-hero-blog" aria-label="Encabezado">
+  <div class="page-hero-content">
+    <p class="section-tag">Historias de viaje</p>
+    <h1 class="page-hero-title">Blog de Destinos</h1>
+    <p class="page-hero-sub">Inspiración, consejos y experiencias reales de nuestros viajeros.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FILTROS DE CATEGORÍA — 100% CSS
+============================================================ -->
+<section class="section blog-section" aria-labelledby="blog-heading">
+  <div class="container">
+    <h2 id="blog-heading" class="sr-only">Artículos del blog</h2>
+
+    <!-- Radio buttons ocultos -->
+    <input type="radio" name="blog-filtro" id="bf-todos"    class="blog-filtro-input" checked />
+    <input type="radio" name="blog-filtro" id="bf-viaje"    class="blog-filtro-input" />
+    <input type="radio" name="blog-filtro" id="bf-cultura"  class="blog-filtro-input" />
+    <input type="radio" name="blog-filtro" id="bf-tips"     class="blog-filtro-input" />
+    <input type="radio" name="blog-filtro" id="bf-gastrono" class="blog-filtro-input" />
+
+    <!-- Botones de filtro -->
+    <div class="blog-filtros" role="group" aria-label="Filtrar artículos">
+      <label for="bf-todos"    class="filtro-btn">📰 Todos</label>
+      <label for="bf-viaje"    class="filtro-btn">✈️ Viajes</label>
+      <label for="bf-cultura"  class="filtro-btn">🏛️ Cultura</label>
+      <label for="bf-tips"     class="filtro-btn">💡 Tips</label>
+      <label for="bf-gastrono" class="filtro-btn">🍽️ Gastronomía</label>
+    </div>
+
+    <!-- ====================================================
+         DISEÑO TIPO NEWSPAPER — CSS Grid
+         La grilla tiene áreas nombradas para simular
+         el layout de una revista/periódico
+    ==================================================== -->
+    <div class="newspaper-grid">
+
+      <!-- Artículo DESTACADO (ocupa más espacio) -->
+      <article class="blog-card blog-card--featured reveal cat-viaje" aria-label="Artículo destacado">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=900&q=75" alt="Quebrada de Humahuaca al amanecer" loading="lazy" />
+          <div class="blog-card-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tags">
+            <span class="blog-tag blog-tag--viaje">✈️ Viajes</span>
+            <span class="blog-tag blog-tag--featured">⭐ Destacado</span>
+          </div>
+          <h2 class="blog-card-title">7 días en la Quebrada: la guía definitiva para novatos</h2>
+          <p class="blog-card-excerpt">Desde los cerros de colores de Purmamarca hasta las salinas grandes: todo lo que necesitás saber antes de tu primer viaje al norte argentino.</p>
+          <div class="blog-card-meta">
+            <div class="blog-author">
+              <div class="author-avatar" aria-hidden="true">MR</div>
+              <div>
+                <strong>Martín Roldán</strong>
+                <time datetime="2026-04-10">10 abril 2026</time>
+              </div>
+            </div>
+            <span class="read-time">⏱️ 8 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artículo 2 -->
+      <article class="blog-card reveal cat-cultura" aria-label="Artículo cultura">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1612294037637-ec328d0e075e?w=600&q=75" alt="Buenos Aires cultural" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tags">
+            <span class="blog-tag blog-tag--cultura">🏛️ Cultura</span>
+          </div>
+          <h3 class="blog-card-title">Los museos gratuitos de Buenos Aires que no te podés perder</h3>
+          <p class="blog-card-excerpt">Arte, historia y ciencia sin gastar un peso. La CABA tiene una agenda cultural increíble para quienes saben dónde buscar.</p>
+          <div class="blog-card-meta">
+            <div class="blog-author">
+              <div class="author-avatar author-avatar--verde" aria-hidden="true">SP</div>
+              <div>
+                <strong>Sofía Peralta</strong>
+                <time datetime="2026-03-28">28 marzo 2026</time>
+              </div>
+            </div>
+            <span class="read-time">⏱️ 5 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artículo 3 -->
+      <article class="blog-card reveal cat-tips" aria-label="Artículo tips">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=75" alt="Equipaje de viaje" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tags">
+            <span class="blog-tag blog-tag--tips">💡 Tips</span>
+          </div>
+          <h3 class="blog-card-title">Cómo armar la mochila perfecta para la Patagonia</h3>
+          <p class="blog-card-excerpt">Lista completa de ropa, calzado y accesorios para viajar liviano sin que te falte nada. Probado en campo.</p>
+          <div class="blog-card-meta">
+            <div class="blog-author">
+              <div class="author-avatar author-avatar--azul" aria-hidden="true">LG</div>
+              <div>
+                <strong>Lucas García</strong>
+                <time datetime="2026-03-15">15 marzo 2026</time>
+              </div>
+            </div>
+            <span class="read-time">⏱️ 6 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artículo 4 -->
+      <article class="blog-card reveal cat-gastrono" aria-label="Artículo gastronomía">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75" alt="Gastronomía argentina" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tags">
+            <span class="blog-tag blog-tag--gastrono">🍽️ Gastronomía</span>
+          </div>
+          <h3 class="blog-card-title">Las 10 comidas típicas que debés probar en tu viaje por Argentina</h3>
+          <p class="blog-card-excerpt">De la humita jujeña al asado patagónico: un recorrido gastronómico por las delicias regionales del país.</p>
+          <div class="blog-card-meta">
+            <div class="blog-author">
+              <div class="author-avatar author-avatar--rojo" aria-hidden="true">AM</div>
+              <div>
+                <strong>Ana Molina</strong>
+                <time datetime="2026-02-20">20 feb 2026</time>
+              </div>
+            </div>
+            <span class="read-time">⏱️ 7 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artículo 5 -->
+      <article class="blog-card reveal cat-viaje" aria-label="Artículo viaje">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=75" alt="Cataratas del Iguazú" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tags">
+            <span class="blog-tag blog-tag--viaje">✈️ Viajes</span>
+          </div>
+          <h3 class="blog-card-title">Iguazú en 3 días: itinerario completo lado argentino y brasileño</h3>
+          <p class="blog-card-excerpt">Cómo aprovechar al máximo tu visita a las cataratas, qué circuitos hacer y cuándo ir para evitar las multitudes.</p>
+          <div class="blog-card-meta">
+            <div class="blog-author">
+              <div class="author-avatar" aria-hidden="true">MR</div>
+              <div>
+                <strong>Martín Roldán</strong>
+                <time datetime="2026-02-05">5 feb 2026</time>
+              </div>
+            </div>
+            <span class="read-time">⏱️ 9 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artículo 6 -->
+      <article class="blog-card reveal cat-tips" aria-label="Artículo tips">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=75" alt="Planificación de viaje" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tags">
+            <span class="blog-tag blog-tag--tips">💡 Tips</span>
+          </div>
+          <h3 class="blog-card-title">Cómo ahorrar en tus viajes por Argentina: guía práctica 2025</h3>
+          <p class="blog-card-excerpt">Transporte, alojamiento y comida: estrategias reales para viajar bien sin gastar de más.</p>
+          <div class="blog-card-meta">
+            <div class="blog-author">
+              <div class="author-avatar author-avatar--verde" aria-hidden="true">SP</div>
+              <div>
+                <strong>Sofía Peralta</strong>
+                <time datetime="2026-01-18">18 ene 2026</time>
+              </div>
+            </div>
+            <span class="read-time">⏱️ 4 min</span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /newspaper-grid -->
+  </div>
+</section>
+
+<!-- ============================================================
+     SECCIÓN DE COMENTARIOS
+     Avatares creados 100% con CSS
+============================================================ -->
+<section class="section comentarios-section" aria-labelledby="comentarios-heading">
+  <div class="container comentarios-wrap">
+
+    <div class="section-head">
+      <p class="section-tag">La comunidad habla</p>
+      <h2 id="comentarios-heading" class="section-title">Comentarios</h2>
+    </div>
+
+    <div class="comentarios-lista">
+
+      <article class="comentario reveal" aria-label="Comentario de Paula Suárez">
+        <div class="com-avatar com-avatar--naranja" aria-hidden="true" data-iniciales="PS"></div>
+        <div class="com-body">
+          <div class="com-header">
+            <strong class="com-nombre">Paula Suárez</strong>
+            <time class="com-fecha" datetime="2026-04-12">12 abril 2026</time>
+          </div>
+          <p class="com-texto">¡Increíble artículo! Viajé a la Quebrada el año pasado y confirmo todo lo que dice. La madrugada en las Salinas Grandes fue mágica.</p>
+          <button class="com-like" aria-label="Me gusta, 24 votos">❤️ 24</button>
+        </div>
+      </article>
+
+      <article class="comentario reveal" aria-label="Comentario de Roberto Juárez">
+        <div class="com-avatar com-avatar--azul" aria-hidden="true" data-iniciales="RJ"></div>
+        <div class="com-body">
+          <div class="com-header">
+            <strong class="com-nombre">Roberto Juárez</strong>
+            <time class="com-fecha" datetime="2026-04-11">11 abril 2026</time>
+          </div>
+          <p class="com-texto">Muy útil la info sobre los museos gratuitos. ¿Alguien sabe si el MALBA sigue con entrada gratuita los miércoles?</p>
+          <button class="com-like" aria-label="Me gusta, 11 votos">❤️ 11</button>
+        </div>
+      </article>
+
+      <article class="comentario reveal" aria-label="Comentario de Valeria Ríos">
+        <div class="com-avatar com-avatar--verde" aria-hidden="true" data-iniciales="VR"></div>
+        <div class="com-body">
+          <div class="com-header">
+            <strong class="com-nombre">Valeria Ríos</strong>
+            <time class="com-fecha" datetime="2026-04-09">9 abril 2026</time>
+          </div>
+          <p class="com-texto">La guía de la mochila para Patagonia me salvó. Agregué las mallas térmicas y fue clave. ¡Gracias!</p>
+          <button class="com-like" aria-label="Me gusta, 18 votos">❤️ 18</button>
+        </div>
+      </article>
+
+      <!-- Formulario de comentario -->
+      <div class="nuevo-comentario reveal">
+        <h3 class="nuevo-com-titulo">Dejá tu comentario</h3>
+        <form class="com-form" novalidate aria-label="Formulario de comentario">
+          <div class="com-form-row">
+            <div class="form-group">
+              <label for="com-nombre" class="form-label">Nombre</label>
+              <input type="text" id="com-nombre" class="form-input" placeholder="Tu nombre" required minlength="2" />
+            </div>
+            <div class="form-group">
+              <label for="com-email" class="form-label">Email</label>
+              <input type="email" id="com-email" class="form-input" placeholder="tu@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="com-texto" class="form-label">Comentario</label>
+            <textarea id="com-texto" class="form-input form-textarea" placeholder="Escribí tu comentario..." required minlength="10"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Publicar comentario</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4 class="footer-title">Suscribite al Newsletter</h4>
+      <p>Recibí ofertas exclusivas cada semana.</p>
+      <form class="newsletter-form" novalidate aria-label="Newsletter">
+        <label for="nl-email" class="sr-only">Email</label>
+        <input type="email" id="nl-email" placeholder="tu@email.com" required />
+        <button type="submit" class="btn btn-primary btn-sm">Suscribirse</button>
+      </form>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Sitio</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destino.html">Destinos</a></li>
+        <li><a href="agencias.html">Agencias</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Redes</h4>
+      <div class="social-links" role="list">
+        <a href="#" class="social-btn" role="listitem" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>Instagram
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Encontranos</h4>
+      <div class="map-embed" role="region" aria-label="Mapa">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.332%2C-24.236%2C-65.277%2C-24.185&layer=mapnik" title="Mapa" loading="lazy"></iframe>
+      </div>
+      <p class="footer-address">📍 San Salvador de Jujuy</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 EleAR.</p>
+    <p>Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/blog.js"></script>
+
+</body>
+</html>

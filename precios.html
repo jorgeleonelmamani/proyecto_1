@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios – EleAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/precios.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="ViajAR inicio">
+      <svg class="logo-svg" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" class="logo-circle"/>
+        <path d="M14 30 Q24 10 34 30" class="logo-path" fill="none" stroke-width="3"/>
+        <circle cx="24" cy="20" r="4" class="logo-dot"/>
+      </svg>
+      <span>Ele<em>AR</em></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul class="nav-list" role="list">
+        <li class="nav-item has-mega">
+          <a href="#" class="nav-link" aria-haspopup="true">Destinos</a>
+          <div class="mega-menu" role="region">
+            <div class="mega-col">
+              <h3 class="mega-title">Por Región</h3>
+              <ul>
+                <li><a href="destino.html">Noroeste (NOA)</a></li>
+                <li><a href="destino.html">Patagonia</a></li>
+                <li><a href="destino.html">Litoral</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="agencias.html" class="nav-link">Agencias</a></li>
+        <li class="nav-item"><a href="precios.html"  class="nav-link nav-active">Precios</a></li>
+        <li class="nav-item"><a href="blog.html"     class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO INTERNO -->
+<section class="page-hero page-hero-precios" aria-label="Encabezado">
+  <div class="page-hero-content">
+    <p class="section-tag">Transparencia total</p>
+    <h1 class="page-hero-title">Comparador de Precios</h1>
+    <p class="page-hero-sub">Pasá el cursor sobre los íconos ℹ️ para ver qué incluye cada plan.</p>
+  </div>
+</section>
+
+<!-- PLANES EN CARDS -->
+<section class="section planes-section" aria-labelledby="planes-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-tag">Elegí tu plan</p>
+      <h2 id="planes-heading" class="section-title">Planes de Viaje</h2>
+      <p class="section-sub">Todos los planes incluyen seguro básico de viaje.</p>
+    </div>
+
+    <div class="planes-grid">
+
+      <!-- PLAN ECONÓMICO -->
+      <div class="plan-card">
+        <div class="plan-header plan-header--eco">
+          <p class="plan-nombre">Económico</p>
+          <p class="plan-precio">$38.000 <span>/ persona</span></p>
+        </div>
+        <ul class="plan-features">
+          <li class="feature-ok">
+            Alojamiento 3 noches
+            <span class="tooltip" aria-label="Hotel 2 estrellas, habitación doble estándar">ℹ️<span class="tooltip-text">Hotel 2 estrellas, habitación doble estándar</span></span>
+          </li>
+          <li class="feature-ok">
+            Desayuno incluido
+            <span class="tooltip" aria-label="Desayuno continental bufé">ℹ️<span class="tooltip-text">Desayuno continental bufé</span></span>
+          </li>
+          <li class="feature-ok">Traslado aeropuerto</li>
+          <li class="feature-no">Almuerzo y cena</li>
+          <li class="feature-no">Guía privado</li>
+          <li class="feature-no">Excursiones incluidas</li>
+        </ul>
+        <a href="contacto.html" class="btn btn-outline-plan">Consultar</a>
+      </div>
+
+      <!-- PLAN ESTÁNDAR  -->
+      <div class="plan-card plan-card--featured">
+        <div class="plan-badge">Más elegido</div>
+        <div class="plan-header plan-header--std">
+          <p class="plan-nombre">Estándar</p>
+          <p class="plan-precio">$65.000 <span>/ persona</span></p>
+        </div>
+        <ul class="plan-features">
+          <li class="feature-ok">
+            Alojamiento 4 noches
+            <span class="tooltip" aria-label="Hotel 3 estrellas, habitación doble superior">ℹ️<span class="tooltip-text">Hotel 3 estrellas, habitación doble superior</span></span>
+          </li>
+          <li class="feature-ok">
+            Desayuno y cena
+            <span class="tooltip" aria-label="Menú de 3 pasos en restaurante del hotel">ℹ️<span class="tooltip-text">Menú de 3 pasos en restaurante del hotel</span></span>
+          </li>
+          <li class="feature-ok">Traslado aeropuerto</li>
+          <li class="feature-ok">
+            2 excursiones incluidas
+            <span class="tooltip" aria-label="Excursiones grupales con guía certificado">ℹ️<span class="tooltip-text">Excursiones grupales con guía certificado</span></span>
+          </li>
+          <li class="feature-no">Guía privado</li>
+          <li class="feature-no">Seguro premium</li>
+        </ul>
+        <a href="contacto.html" class="btn btn-primary">Reservar ahora</a>
+      </div>
+
+      <!-- PLAN PREMIUM -->
+      <div class="plan-card">
+        <div class="plan-header plan-header--prem">
+          <p class="plan-nombre">Premium</p>
+          <p class="plan-precio">$120.000 <span>/ persona</span></p>
+        </div>
+        <ul class="plan-features">
+          <li class="feature-ok">
+            Alojamiento 5 noches
+            <span class="tooltip" aria-label="Hotel 5 estrellas, suite con vista panorámica">ℹ️<span class="tooltip-text">Hotel 5 estrellas, suite con vista panorámica</span></span>
+          </li>
+          <li class="feature-ok">
+            Pensión completa
+            <span class="tooltip" aria-label="Desayuno, almuerzo y cena incluidos todos los días">ℹ️<span class="tooltip-text">Desayuno, almuerzo y cena incluidos todos los días</span></span>
+          </li>
+          <li class="feature-ok">Traslado aeropuerto VIP</li>
+          <li class="feature-ok">
+            Excursiones ilimitadas
+            <span class="tooltip" aria-label="Incluye acceso ilimitado a todas las excursiones del catálogo">ℹ️<span class="tooltip-text">Incluye acceso ilimitado a todas las excursiones</span></span>
+          </li>
+          <li class="feature-ok">
+            Guía privado
+            <span class="tooltip" aria-label="Guía exclusivo para tu grupo durante todo el viaje">ℹ️<span class="tooltip-text">Guía exclusivo para tu grupo todo el viaje</span></span>
+          </li>
+          <li class="feature-ok">
+            Seguro premium
+            <span class="tooltip" aria-label="Cobertura total: médica, equipaje y cancelación">ℹ️<span class="tooltip-text">Cobertura total: médica, equipaje y cancelación</span></span>
+          </li>
+        </ul>
+        <a href="contacto.html" class="btn btn-outline-plan">Consultar</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TABLA COMPARADORA DETALLADA -->
+<section class="section tabla-comp-section" aria-labelledby="tabla-comp-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-tag">Compará en detalle</p>
+      <h2 id="tabla-comp-heading" class="section-title">Tabla Comparativa</h2>
+    </div>
+
+    <div class="table-wrap" role="region" aria-label="Tabla comparativa de planes" tabindex="0">
+      <table class="comp-tabla">
+        <thead>
+          <tr>
+            <th scope="col">Característica</th>
+            <th scope="col">Económico</th>
+            <th scope="col" class="col-featured">Estándar</th>
+            <th scope="col">Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Característica">
+              Noches de alojamiento
+              <span class="tooltip" aria-label="Cantidad de noches incluidas en el paquete">ℹ️<span class="tooltip-text">Cantidad de noches incluidas</span></span>
+            </td>
+            <td data-label="Económico">3 noches</td>
+            <td data-label="Estándar" class="col-featured">4 noches</td>
+            <td data-label="Premium">5 noches</td>
+          </tr>
+          <tr>
+            <td data-label="Característica">Categoría hotel</td>
+            <td data-label="Económico">⭐⭐</td>
+            <td data-label="Estándar" class="col-featured">⭐⭐⭐</td>
+            <td data-label="Premium">⭐⭐⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td data-label="Característica">Comidas incluidas</td>
+            <td data-label="Económico">Desayuno</td>
+            <td data-label="Estándar" class="col-featured">Desayuno + cena</td>
+            <td data-label="Premium">Pensión completa</td>
+          </tr>
+          <tr>
+            <td data-label="Característica">
+              Excursiones
+              <span class="tooltip" aria-label="Actividades y paseos incluidos en el precio">ℹ️<span class="tooltip-text">Actividades y paseos incluidos</span></span>
+            </td>
+            <td data-label="Económico">❌</td>
+            <td data-label="Estándar" class="col-featured">2 grupales</td>
+            <td data-label="Premium">Ilimitadas</td>
+          </tr>
+          <tr>
+            <td data-label="Característica">Guía turístico</td>
+            <td data-label="Económico">❌</td>
+            <td data-label="Estándar" class="col-featured">Grupal</td>
+            <td data-label="Premium">Privado</td>
+          </tr>
+          <tr>
+            <td data-label="Característica">Traslado aeropuerto</td>
+            <td data-label="Económico">✅</td>
+            <td data-label="Estándar" class="col-featured">✅</td>
+            <td data-label="Premium">✅ VIP</td>
+          </tr>
+          <tr>
+            <td data-label="Característica">
+              Seguro de viaje
+              <span class="tooltip" aria-label="Cobertura médica básica incluida en todos los planes">ℹ️<span class="tooltip-text">Cobertura médica básica en todos los planes</span></span>
+            </td>
+            <td data-label="Económico">Básico</td>
+            <td data-label="Estándar" class="col-featured">Estándar</td>
+            <td data-label="Premium">Premium completo</td>
+          </tr>
+          <tr class="tr-precio">
+            <td data-label="Característica"><strong>Precio por persona</strong></td>
+            <td data-label="Económico"><strong>$38.000</strong></td>
+            <td data-label="Estándar" class="col-featured"><strong>$65.000</strong></td>
+            <td data-label="Premium"><strong>$120.000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tabla-nota">* Precios en pesos argentinos. Sujetos a disponibilidad. Actualizados mayo 2026.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4 class="footer-title">Suscribite al Newsletter</h4>
+      <p>Recibí ofertas exclusivas cada semana.</p>
+      <form class="newsletter-form" novalidate aria-label="Newsletter">
+        <label for="nl-email" class="sr-only">Email</label>
+        <input type="email" id="nl-email" placeholder="tu@email.com" required />
+        <button type="submit" class="btn btn-primary btn-sm">Suscribirse</button>
+      </form>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Sitio</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destino.html">Destinos</a></li>
+        <li><a href="agencias.html">Agencias</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Redes</h4>
+      <div class="social-links" role="list">
+        <a href="#" class="social-btn" role="listitem" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>Instagram
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title">Encontranos</h4>
+      <div class="map-embed" role="region" aria-label="Mapa">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.332%2C-24.236%2C-65.277%2C-24.185&layer=mapnik" title="Mapa" loading="lazy"></iframe>
+      </div>
+      <p class="footer-address">📍 San Salvador de Jujuy</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 EleAR.</p>
+    <p>Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

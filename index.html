@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EleAR- Turismo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER + MEGA-MENU
+============================================================ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo" aria-label="ViajAR inicio">
+      <svg class="logo-svg" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" class="logo-circle"/>
+        <path d="M14 30 Q24 10 34 30" class="logo-path" fill="none" stroke-width="3"/>
+        <circle cx="24" cy="20" r="4" class="logo-dot"/>
+      </svg>
+      <span>Ele<em>AR</em></span>
+    </a>
+
+    <!-- Nav principal -->
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul class="nav-list" role="list">
+
+        <li class="nav-item has-mega">
+          <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Destinos</a>
+          <div class="mega-menu" role="region" aria-label="Submenú Destinos">
+            <div class="mega-col">
+              <h3 class="mega-title">Por Región</h3>
+              <ul>
+                <li><a href="destino.html">Noroeste (NOA)</a></li>
+                <li><a href="destino.html">Patagonia</a></li>
+                <li><a href="destino.html">Litoral</a></li>
+                <li><a href="destino.html">Cuyo</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h3 class="mega-title">Por Tipo</h3>
+              <ul>
+                <li><a href="destino.html">Cultural</a></li>
+                <li><a href="destino.html">Naturaleza</a></li>
+                <li><a href="destino.html">Sol y Playa</a></li>
+                <li><a href="destino.html">Gastronómico</a></li>
+              </ul>
+            </div>
+            <div class="mega-col mega-featured">
+              <h3 class="mega-title">Destacado</h3>
+              <div class="mega-card">
+                <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=260&q=70" alt="Quebrada de Humahuaca" />
+                <span>Quebrada de Humahuaca</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item has-mega">
+          <a href="agencias.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Agencias</a>
+          <div class="mega-menu" role="region" aria-label="Submenú Agencias">
+            <div class="mega-col">
+              <h3 class="mega-title">Explorar</h3>
+              <ul>
+                <li><a href="agencias.html">Todas las Agencias</a></li>
+                <li><a href="agencias.html">Mejor Valoradas</a></li>
+                <li><a href="agencias.html">Nuevas</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h3 class="mega-title">Servicios</h3>
+              <ul>
+                <li><a href="agencias.html">Paquetes Todo Incluido</a></li>
+                <li><a href="agencias.html">Viajes Grupales</a></li>
+                <li><a href="agencias.html">Turismo Aventura</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item has-mega">
+          <a href="precios.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Precios</a>
+          <div class="mega-menu" role="region" aria-label="Submenú Precios">
+            <div class="mega-col">
+              <h3 class="mega-title">Planes</h3>
+              <ul>
+                <li><a href="precios.html">Económico</a></li>
+                <li><a href="precios.html">Estándar</a></li>
+                <li><a href="precios.html">Premium</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h3 class="mega-title">Ofertas</h3>
+              <ul>
+                <li><a href="precios.html">Última Hora</a></li>
+                <li><a href="precios.html">Temporada Baja</a></li>
+                <li><a href="precios.html">Grupos +10</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Controles header -->
+    <div class="header-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo oscuro/claro">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" aria-label="Sección principal">
+  <div class="hero-video-wrap" aria-hidden="true">
+    <video autoplay muted loop playsinline class="hero-fallback">
+      <source src="img/hero.mp4" type="video/mp4" />
+      />
+    </video>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-tag animate-fade-up" style="animation-delay:.1s"> Descubrí Argentina</p>
+    <h1 class="hero-title animate-fade-up" style="animation-delay:.3s">
+      Cada destino<br/>una historia diferente
+    </h1>
+    <p class="hero-sub animate-fade-up" style="animation-delay:.5s">
+      Tu próximo gran recuerdo comienza aquí.
+    </p>
+    <div class="hero-ctas animate-fade-up" style="animation-delay:.7s">
+      <a href="destino.html" class="btn btn-primary">Explorar destinos</a>
+      <a href="precios.html" class="btn btn-outline">Ver precios</a>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <span class="scroll-dot"></span>
+  </div>
+</section>
+
+<!-- ============================================================
+     DESTINOS DESTACADOS
+============================================================ -->
+<section class="section destinations" aria-labelledby="dest-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-tag">Lo más visitado</p>
+      <h2 id="dest-heading" class="section-title">Destinos Destacados</h2>
+      <p class="section-sub">Elegidos por miles de viajeros argentinos cada año.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <article class="dest-card" tabindex="0">
+        <div class="card-img-wrap">
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/15/7c/ea/23.jpg" alt="Quebrada de Humahuaca, Jujuy" loading="lazy" />
+          <span class="card-badge">NOA</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Quebrada de Humahuaca</h3>
+          <p class="card-loc">📍 Jujuy, Argentina</p>
+          <p class="card-desc">Patrimonio de la Humanidad lleno de colores, cultura y silencio andino.</p>
+          <div class="card-footer">
+            <span class="card-price">desde <strong>$45.000</strong></span>
+            <a href="destino.html" class="btn btn-sm">Ver más</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card" tabindex="0">
+        <div class="card-img-wrap">
+          <img src="https://cambio.com.co/wp-content/uploads/2023/10/hans-jurgen-weinhardt-5RFMPufTKPA-unsplash-scaled.jpg" alt="Glaciar Perito Moreno, Santa Cruz" loading="lazy" />
+          <span class="card-badge">Patagonia</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Glaciar Perito Moreno</h3>
+          <p class="card-loc">📍 Santa Cruz, Argentina</p>
+          <p class="card-desc">Un espectáculo natural único: el glaciar más famoso del mundo en movimiento.</p>
+          <div class="card-footer">
+            <span class="card-price">desde <strong>$120.000</strong></span>
+            <a href="destino.html" class="btn btn-sm">Ver más</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card" tabindex="0">
+        <div class="card-img-wrap">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShATG65g0vOlPx7kpjGFLGvDy3nMcRwxVE0Q&s" alt="Iguazú, Misiones" loading="lazy" />
+          <span class="card-badge">Litoral</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cataratas del Iguazú</h3>
+          <p class="card-loc">📍 Misiones, Argentina</p>
+          <p class="card-desc">La maravilla natural más imponente de Sudamérica. Naturaleza en estado puro.</p>
+          <div class="card-footer">
+            <span class="card-price">desde <strong>$85.000</strong></span>
+            <a href="destino.html" class="btn btn-sm">Ver más</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card" tabindex="0">
+        <div class="card-img-wrap">
+          <img src="https://www.grantthornton.com.ar/contentassets/e80f806a07234fb0afb346058c1bc24c/banner---hecho-en-mendoza.jpg" alt="Mendoza" loading="lazy" />
+          <span class="card-badge">Cuyo</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Mendoza y el vino</h3>
+          <p class="card-loc">📍 Mendoza, Argentina</p>
+          <p class="card-desc">Bodegas, montañas nevadas y la gastronomía más refinada del país.</p>
+          <div class="card-footer">
+            <span class="card-price">desde <strong>$60.000</strong></span>
+            <a href="destino.html" class="btn btn-sm">Ver más</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="section-cta">
+      <a href="destino.html" class="btn btn-primary">Ver todos los destinos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTADOR ANIMADO
+============================================================ -->
+<section class="section stats-section" aria-label="Estadísticas">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
+        <p class="stat-label">Destinos</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="12000">0</span><span class="stat-plus">+</span>
+        <p class="stat-label">Viajeros felices</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="80">0</span><span class="stat-plus">+</span>
+        <p class="stat-label">Agencias aliadas</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+        <p class="stat-label">Años de experiencia</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIOS – Carrusel solo CSS
+============================================================ -->
+<section class="section testimonials" aria-labelledby="test-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-tag">Lo que dicen</p>
+      <h2 id="test-heading" class="section-title">Testimonios</h2>
+    </div>
+
+    <div class="carousel-wrapper">
+      <input type="radio" name="carousel" id="c1" checked aria-label="Testimonio 1" />
+      <input type="radio" name="carousel" id="c2" aria-label="Testimonio 2"/>
+      <input type="radio" name="carousel" id="c3" aria-label="Testimonio 3"/>
+
+      <div class="carousel-track">
+        <article class="testimonial-card slide" id="slide1">
+          <div class="test-avatar" aria-hidden="true">MG</div>
+          <blockquote>
+            <p>"Viajé a la Quebrada con ViajAR y fue una experiencia que cambió mi vida. Todo organizado, sin imprevistos."</p>
+          </blockquote>
+          <footer>
+            <strong>María González</strong>
+            <span>Buenos Aires</span>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card slide" id="slide2">
+          <div class="test-avatar" aria-hidden="true">CR</div>
+          <blockquote>
+            <p>"Los precios son increíbles y la atención es personalizada. Ya reservé mi tercer viaje con ellos."</p>
+          </blockquote>
+          <footer>
+            <strong>Carlos Ramos</strong>
+            <span>Córdoba</span>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card slide" id="slide3">
+          <div class="test-avatar" aria-hidden="true">LP</div>
+          <blockquote>
+            <p>"El blog de destinos me ayudó a descubrir lugares que nunca hubiera conocido. ¡Muy recomendable!"</p>
+          </blockquote>
+          <footer>
+            <strong>Laura Pérez</strong>
+            <span>Rosario</span>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          </footer>
+        </article>
+      </div>
+
+      <div class="carousel-dots" aria-label="Navegación del carrusel">
+        <label for="c1" class="dot" aria-label="Ir al testimonio 1"></label>
+        <label for="c2" class="dot" aria-label="Ir al testimonio 2"></label>
+        <label for="c3" class="dot" aria-label="Ir al testimonio 3"></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+
+    <div class="footer-col">
+      <h4 class="footer-title">Suscribite al Newsletter</h4>
+      <p>Recibí ofertas exclusivas y novedades de destinos cada semana.</p>
+      <form class="newsletter-form" novalidate aria-label="Formulario newsletter">
+        <label for="newsletter-email" class="sr-only">Correo electrónico</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="tu@email.com" required aria-required="true" />
+        <button type="submit" class="btn btn-primary btn-sm">Suscribirse</button>
+      </form>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-title">Sitio</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destino.html">Destinos</a></li>
+        <li><a href="agencias.html">Agencias</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-title">Redes Sociales</h4>
+      <div class="social-links" role="list">
+        <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F&is_from_rle" class="social-btn" role="listitem" aria-label="Instagram de ViajAR">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/accounts/login" class="social-btn" role="listitem" aria-label="Facebook de ViajAR">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="#" class="social-btn" role="listitem" aria-label="YouTube de ViajAR">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-map-col">
+      <h4 class="footer-title">Encontranos</h4>
+      <div class="map-embed" role="region" aria-label="Mapa de ubicación">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-65.332%2C-24.236%2C-65.277%2C-24.185&layer=mapnik&marker=-24.211%2C-65.305"
+          title="Mapa OpenStreetMap – San Salvador de Jujuy"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="footer-address">📍 San Salvador de Jujuy, Argentina</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 EleAR.</p>
+    <p>Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
