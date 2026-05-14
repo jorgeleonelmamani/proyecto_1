@@ -1,0 +1,388 @@
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seguridad – ElejAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/bootstrap-custom.css" />
+  <link rel="stylesheet" href="css/phishing.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg viajar-navbar sticky-top">
+  <div class="container-fluid px-4">
+    <a href="index.html" class="navbar-brand viajar-logo">
+      <svg viewBox="0 0 48 48" aria-hidden="true" class="logo-svg">
+        <circle cx="24" cy="24" r="22" class="logo-circle"/>
+        <path d="M14 30 Q24 10 34 30" fill="none" stroke="#fff" stroke-width="3"/>
+        <circle cx="24" cy="20" r="4" class="logo-dot"/>
+      </svg>
+      Ele<em>AR</em>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="destino.html"><i class="fa-solid fa-map-location-dot me-1"></i>Destinos</a></li>
+        <li class="nav-item"><a class="nav-link" href="agencias.html"><i class="fa-solid fa-building me-1"></i>Agencias</a></li>
+        <li class="nav-item"><a class="nav-link" href="precios.html"><i class="fa-solid fa-tag me-1"></i>Precios</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i>Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="fa-solid fa-envelope me-1"></i>Contacto</a></li>
+        <li class="nav-item"><a class="nav-link nav-phishing active" href="phishing.html"><i class="fa-solid fa-shield-halved me-1"></i>Seguridad</a></li>
+        <li class="nav-item ms-lg-2">
+          <button class="btn btn-sm theme-toggle-bs" id="themeToggle" aria-label="Cambiar tema">
+            <i class="fa-solid fa-sun icon-sun"></i><i class="fa-solid fa-moon icon-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero page-hero-phishing">
+  <div class="page-hero-content">
+    <p class="section-tag"><i class="fa-solid fa-shield-halved me-1"></i>Módulo Educativo</p>
+    <h1 class="page-hero-title">Seguridad Digital</h1>
+    <p class="page-hero-sub">Aprendé a identificar intentos de phishing y proteger tus datos.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section intro-section">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-6">
+        <p class="section-tag"><i class="fa-solid fa-triangle-exclamation me-1"></i>¿Qué es el phishing?</p>
+        <h2 class="section-title">El engaño digital más común</h2>
+        <p class="text-muted">El phishing es una técnica de fraude donde los atacantes se hacen pasar por empresas o personas confiables para robar datos personales, contraseñas o información bancaria.</p>
+        <p class="text-muted">En el sector turístico es muy frecuente: sitios falsos de reservas, emails de "confirmación" de vuelos inexistentes, o agencias fraudulentas.</p>
+        <div class="alert alert-warning d-flex align-items-center mt-3" role="alert">
+          <i class="fa-solid fa-circle-exclamation fa-lg me-3 flex-shrink-0"></i>
+          <div><strong>Importante:</strong> Este módulo es educativo. No se recopilan ni usan datos reales en ningún momento.</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="stats-phishing row g-3 text-center">
+          <div class="col-6">
+            <div class="stat-phishing-card">
+              <i class="fa-solid fa-envelope-open-text fa-2x mb-2"></i>
+              <div class="stat-num">3.4 mil millones</div>
+              <div class="stat-lbl">Emails de phishing por día</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-phishing-card">
+              <i class="fa-solid fa-user-slash fa-2x mb-2"></i>
+              <div class="stat-num">36%</div>
+              <div class="stat-lbl">De brechas por phishing</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-phishing-card">
+              <i class="fa-solid fa-clock fa-2x mb-2"></i>
+              <div class="stat-num">60 seg</div>
+              <div class="stat-lbl">Para detectar una víctima</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-phishing-card">
+              <i class="fa-solid fa-shield-check fa-2x mb-2"></i>
+              <div class="stat-num">95%</div>
+              <div class="stat-lbl">Prevenible con conocimiento</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÑALES DE ALERTA -->
+<section class="section senales-section">
+  <div class="container">
+    <div class="section-head text-center mb-5">
+      <p class="section-tag"><i class="fa-solid fa-magnifying-glass me-1"></i>Aprendé a detectarlos</p>
+      <h2 class="section-title">Señales de Fraude</h2>
+      <p class="section-sub">Conocer estas señales puede salvarte de una estafa.</p>
+    </div>
+    <div class="row g-4" id="senalesGrid">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="senal-card reveal">
+          <div class="senal-icon senal-icon--red"><i class="fa-solid fa-link"></i></div>
+          <h4>URL sospechosa</h4>
+          <p>El dominio tiene errores tipográficos: <code>viajar-arg.com</code> en vez de <code>viajar.com.ar</code></p>
+          <div class="senal-ejemplo">
+            <span class="malo"><i class="fa-solid fa-xmark me-1"></i>http://viaj4r-ofertas.xyz/login</span>
+            <span class="bueno"><i class="fa-solid fa-check me-1"></i>https://viajar.com.ar/login</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="senal-card reveal">
+          <div class="senal-icon senal-icon--orange"><i class="fa-solid fa-envelope"></i></div>
+          <h4>Email urgente y amenazante</h4>
+          <p>Mensajes como "Tu cuenta será bloqueada en 24 horas" para apurarte a actuar sin pensar.</p>
+          <div class="senal-ejemplo">
+            <span class="malo"><i class="fa-solid fa-xmark me-1"></i>"¡URGENTE! Verificá ahora o perdés tu reserva"</span>
+            <span class="bueno"><i class="fa-solid fa-check me-1"></i>Empresas reales no generan urgencia artificial</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="senal-card reveal">
+          <div class="senal-icon senal-icon--yellow"><i class="fa-solid fa-lock-open"></i></div>
+          <h4>Sin candado HTTPS</h4>
+          <p>Los sitios legítimos usan HTTPS. Si el navegador muestra "No seguro", no ingreses datos.</p>
+          <div class="senal-ejemplo">
+            <span class="malo"><i class="fa-solid fa-xmark me-1"></i>http:// (sin candado)</span>
+            <span class="bueno"><i class="fa-solid fa-check me-1"></i>https:// (con candado verde)</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="senal-card reveal">
+          <div class="senal-icon senal-icon--red"><i class="fa-solid fa-dollar-sign"></i></div>
+          <h4>Ofertas demasiado buenas</h4>
+          <p>Vuelos a $500 o paquetes con 90% de descuento son señales claras de fraude.</p>
+          <div class="senal-ejemplo">
+            <span class="malo"><i class="fa-solid fa-xmark me-1"></i>"Vuelo BUE-MAD por $1.000 ¡Solo hoy!"</span>
+            <span class="bueno"><i class="fa-solid fa-check me-1"></i>Comparar precios en sitios oficiales</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="senal-card reveal">
+          <div class="senal-icon senal-icon--orange"><i class="fa-solid fa-user-secret"></i></div>
+          <h4>Remitente desconocido</h4>
+          <p>El email viene de <code>noreply@aerol1neas.info</code> pero dice ser Aerolíneas Argentinas.</p>
+          <div class="senal-ejemplo">
+            <span class="malo"><i class="fa-solid fa-xmark me-1"></i>soporte@aerolineas-arg.xyz</span>
+            <span class="bueno"><i class="fa-solid fa-check me-1"></i>info@aerolineas.com.ar</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="senal-card reveal">
+          <div class="senal-icon senal-icon--yellow"><i class="fa-solid fa-file-circle-question"></i></div>
+          <h4>Archivos adjuntos raros</h4>
+          <p>Archivos .exe, .zip o .docm adjuntos en emails de "confirmación de reserva" son trampas.</p>
+          <div class="senal-ejemplo">
+            <span class="malo"><i class="fa-solid fa-xmark me-1"></i>comprobante_reserva.exe</span>
+            <span class="bueno"><i class="fa-solid fa-check me-1"></i>Solo abrir PDFs de fuentes conocidas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULACIÓN INTERACTIVA -->
+<section class="section simulacion-section">
+  <div class="container">
+    <div class="section-head text-center mb-5">
+      <p class="section-tag"><i class="fa-solid fa-flask me-1"></i>Ponete a prueba</p>
+      <h2 class="section-title">Simulación de Phishing</h2>
+      <p class="section-sub">Identificá los errores en este email falso. Solo con fines educativos.</p>
+    </div>
+
+    <div class="row g-5 align-items-start">
+
+      <!-- Email simulado -->
+      <div class="col-12 col-lg-7">
+        <div class="email-simulado" id="emailSimulado">
+          <div class="email-header">
+            <div class="email-meta">
+              <div><strong>De:</strong> <span class="email-remitente error-item" data-error="1">confirmacion@aerolineas-arg.xyz</span></div>
+              <div><strong>Para:</strong> usuario@email.com</div>
+              <div><strong>Asunto:</strong> <span class="error-item" data-error="2">⚠️ URGENTE: Tu reserva será CANCELADA en 2 horas</span></div>
+            </div>
+          </div>
+          <div class="email-body">
+            <p>Estimado cliente,</p>
+            <p>Detectamos un <strong>problema con tu pago</strong> de la reserva #ARG-28471. Si no confirmás tus datos en las próximas 2 horas, tu vuelo será cancelado automáticamente.</p>
+            <p>Para evitar la cancelación, hacé clic en el siguiente enlace:</p>
+            <p>
+              <a href="#" class="btn-email error-item" data-error="3" onclick="return false;">
+                 Confirmar datos ahora — http://aerolineas-confirmacion.xyz/pago
+              </a>
+            </p>
+            <p>También adjuntamos tu <span class="error-item" data-error="4">comprobante_reserva.exe</span> para que lo guardes.</p>
+            <p>Atentamente,<br/><span class="error-item" data-error="5">Soporte Aerolineas Argentinas S.A</span></p>
+          </div>
+        </div>
+        <p class="text-muted text-center mt-2 small">
+          <i class="fa-solid fa-circle-info me-1"></i>Hacé clic en los elementos sospechosos del email
+        </p>
+      </div>
+
+      <!-- Panel de errores -->
+      <div class="col-12 col-lg-5">
+        <div class="errores-panel">
+          <h4 class="errores-titulo">
+            <i class="fa-solid fa-list-check me-2"></i>Errores a encontrar
+            <span class="badge bg-secondary ms-2" id="contadorBadge">0/5</span>
+          </h4>
+          <ul class="errores-lista" id="erroresLista">
+            <li class="error-check" data-error="1">
+              <span class="error-icon"><i class="fa-regular fa-circle"></i></span>
+              Remitente con dominio falso (<code>.xyz</code>)
+            </li>
+            <li class="error-check" data-error="2">
+              <span class="error-icon"><i class="fa-regular fa-circle"></i></span>
+              Asunto alarmista con urgencia artificial
+            </li>
+            <li class="error-check" data-error="3">
+              <span class="error-icon"><i class="fa-regular fa-circle"></i></span>
+              Enlace sospechoso a dominio no oficial
+            </li>
+            <li class="error-check" data-error="4">
+              <span class="error-icon"><i class="fa-regular fa-circle"></i></span>
+              Adjunto ejecutable (.exe) peligroso
+            </li>
+            <li class="error-check" data-error="5">
+              <span class="error-icon"><i class="fa-regular fa-circle"></i></span>
+              Nombre de empresa mal escrito (sin tilde)
+            </li>
+          </ul>
+
+          <!-- Progreso -->
+          <div class="mt-3">
+            <div class="d-flex justify-content-between mb-1">
+              <small class="text-muted">Progreso</small>
+              <small class="text-muted" id="progresoTexto">0 de 5 encontrados</small>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" id="progresoBar" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <!-- Botón reiniciar -->
+          <button class="btn btn-outline-secondary w-100 mt-3" id="btnReiniciar">
+            <i class="fa-solid fa-rotate-left me-2"></i>Reiniciar simulación
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL BOOTSTRAP – advertencia al hacer clic en el email -->
+<div class="modal fade" id="modalPhishing" tabindex="-1"
+  aria-labelledby="modalPhishingTitulo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalPhishingTitulo">
+          <i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>
+          <span id="modalTituloTexto"></span>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="modalPhishingBody"></div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          <i class="fa-solid fa-check me-2"></i>Entendido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONSEJOS FINALES -->
+<section class="section consejos-section">
+  <div class="container">
+    <div class="section-head text-center mb-5">
+      <p class="section-tag"><i class="fa-solid fa-shield-check me-1"></i>Protegete</p>
+      <h2 class="section-title">Consejos de Seguridad</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="consejo-card reveal text-center">
+          <i class="fa-solid fa-magnifying-glass-dollar fa-2x mb-3"></i>
+          <h5>Verificá la URL</h5>
+          <p>Antes de ingresar datos, chequeá que el dominio sea el oficial. Buscá el candado HTTPS.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="consejo-card reveal text-center">
+          <i class="fa-solid fa-key fa-2x mb-3"></i>
+          <h5>Usá contraseñas únicas</h5>
+          <p>Nunca repitas contraseñas. Usá un gestor de contraseñas para mayor seguridad.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="consejo-card reveal text-center">
+          <i class="fa-solid fa-mobile-screen-button fa-2x mb-3"></i>
+          <h5>Activá el 2FA</h5>
+          <p>La autenticación de dos factores protege tu cuenta aunque roben tu contraseña.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="consejo-card reveal text-center">
+          <i class="fa-solid fa-phone fa-2x mb-3"></i>
+          <h5>Llamá para confirmar</h5>
+          <p>Ante cualquier duda, llamá a la empresa directamente usando el número oficial de su web.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4 class="footer-title"><i class="fa-solid fa-paper-plane me-2"></i>Newsletter</h4>
+      <p>Recibí consejos de seguridad y ofertas cada semana.</p>
+      <form class="newsletter-form" novalidate>
+        <input type="email" placeholder="tu@email.com" required />
+        <button type="submit" class="btn btn-primary btn-sm">Suscribirse</button>
+      </form>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title"><i class="fa-solid fa-sitemap me-2"></i>Sitio</h4>
+      <ul class="footer-links">
+        <li><a href="index.html"><i class="fa-solid fa-house fa-sm me-2"></i>Inicio</a></li>
+        <li><a href="destino.html"><i class="fa-solid fa-map fa-sm me-2"></i>Destinos</a></li>
+        <li><a href="agencias.html"><i class="fa-solid fa-building fa-sm me-2"></i>Agencias</a></li>
+        <li><a href="precios.html"><i class="fa-solid fa-tag fa-sm me-2"></i>Precios</a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-newspaper fa-sm me-2"></i>Blog</a></li>
+        <li><a href="contacto.html"><i class="fa-solid fa-envelope fa-sm me-2"></i>Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title"><i class="fa-solid fa-share-nodes me-2"></i>Redes</h4>
+      <div class="social-links" role="list">
+        <a href="#" class="social-btn" role="listitem" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#" class="social-btn" role="listitem" aria-label="Facebook"><i class="fa-brands fa-facebook"></i> Facebook</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-title"><i class="fa-solid fa-location-dot me-2"></i>Encontranos</h4>
+      <div class="map-embed" role="region" aria-label="Mapa">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.332%2C-24.236%2C-65.277%2C-24.185&layer=mapnik" title="Mapa" loading="lazy"></iframe>
+      </div>
+      <p class="footer-address"><i class="fa-solid fa-location-dot me-1"></i>San Salvador de Jujuy</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 EleAR.</p>
+    <p>Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/phishing.js"></script>
+</body>
+</html>

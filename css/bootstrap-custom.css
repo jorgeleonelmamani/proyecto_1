@@ -1,0 +1,262 @@
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.viajar-navbar {
+  background-color: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px var(--color-shadow);
+  height: var(--header-h);
+  transition: background-color var(--transition-slow);
+}
+
+/* Logo */
+.viajar-logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-primary) !important;
+  text-decoration: none;
+}
+.viajar-logo em { font-style: normal; color: var(--color-text); }
+.viajar-logo .logo-svg { width: 36px; height: 36px; transition: transform 250ms ease; }
+.viajar-logo:hover .logo-svg { transform: rotate(12deg) scale(1.08); }
+.logo-circle { fill: var(--color-primary); }
+.logo-dot    { fill: var(--color-accent); }
+
+/* Links del nav */
+.viajar-navbar .nav-link {
+  color: var(--color-text) !important;
+  font-weight: 500;
+  font-size: .95rem;
+  border-radius: 6px;
+  padding: .45rem .85rem !important;
+  transition: color 250ms ease, background 250ms ease;
+}
+.viajar-navbar .nav-link:hover,
+.viajar-navbar .nav-link.active {
+  color: var(--color-primary) !important;
+  background: var(--color-surface2);
+}
+
+/* Link de seguridad/phishing — destacado */
+.nav-phishing {
+  color: #c62828 !important;
+  font-weight: 600 !important;
+}
+.nav-phishing:hover { background: #fce4ec !important; }
+
+/* Hamburguesa */
+.navbar-toggler {
+  border-color: var(--color-border) !important;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c8622a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ============================================================
+   MEGA MENÚ (dropdown Bootstrap extendido)
+============================================================ */
+.mega-dropdown { position: static !important; }
+
+.mega-menu-bs {
+  width: 100%;
+  left: 0 !important;
+  right: 0 !important;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 16px 48px rgba(0,0,0,.15);
+  background: var(--color-surface);
+  margin-top: 8px !important;
+}
+
+.mega-menu-bs .mega-title {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--color-text-muted);
+  margin-bottom: .5rem;
+}
+
+.mega-menu-bs .dropdown-item {
+  font-size: .88rem;
+  color: var(--color-text);
+  padding: .3rem 0 !important;
+  background: transparent !important;
+  border-bottom: 1px solid transparent;
+  transition: color 200ms, border-color 200ms;
+}
+.mega-menu-bs .dropdown-item:hover {
+  color: var(--color-primary) !important;
+  border-bottom-color: var(--color-primary);
+}
+
+/* Imagen destacada en mega menú */
+.mega-featured-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.mega-featured-card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+.mega-featured-card span {
+  display: block;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 4px 0 0;
+  color: var(--color-text);
+}
+
+/* Dropdown normal */
+.viajar-navbar .dropdown-menu {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px var(--color-shadow);
+  background: var(--color-surface);
+  padding: .5rem;
+}
+.viajar-navbar .dropdown-item {
+  font-size: .9rem;
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  transition: background 200ms, color 200ms;
+}
+.viajar-navbar .dropdown-item:hover {
+  background: var(--color-surface2);
+  color: var(--color-primary);
+}
+.viajar-navbar .dropdown-divider { border-color: var(--color-border); }
+
+/* ============================================================
+   DARK MODE TOGGLE (reemplaza el btn anterior)
+============================================================ */
+.theme-toggle-bs {
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-surface2);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text);
+  transition: background 250ms;
+  padding: 0;
+}
+.theme-toggle-bs:hover { background: var(--color-border); }
+.theme-toggle-bs .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle-bs .icon-sun  { display: none; }
+[data-theme="dark"] .theme-toggle-bs .icon-moon { display: inline; }
+
+/* ============================================================
+   CAROUSEL TESTIMONIOS
+============================================================ */
+.carousel-viajar {
+  max-width: 680px;
+  margin-inline: auto;
+}
+.carousel-viajar .testimonial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  gap: 1rem;
+  margin: 0 2rem 3rem; /* espacio para los controles */
+}
+.carousel-viajar .test-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.carousel-viajar blockquote p {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+.carousel-viajar footer {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.carousel-viajar footer strong { font-weight: 700; font-size: .95rem; }
+.carousel-viajar footer span   { font-size: .85rem; color: var(--color-text-muted); }
+.carousel-viajar .stars { color: var(--color-accent); letter-spacing: 2px; margin-top: 4px; }
+
+/* Controles del carousel */
+.carousel-viajar .carousel-control-prev,
+.carousel-viajar .carousel-control-next {
+  width: 40px; height: 40px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  top: 50%; transform: translateY(-60%);
+  opacity: 1;
+}
+.carousel-viajar .carousel-control-prev { left: -8px; }
+.carousel-viajar .carousel-control-next { right: -8px; }
+.carousel-viajar .carousel-control-prev-icon,
+.carousel-viajar .carousel-control-next-icon { width: 16px; height: 16px; }
+
+/* Indicadores */
+.carousel-viajar .carousel-indicators {
+  bottom: 0;
+}
+.carousel-viajar .carousel-indicators button {
+  background: var(--color-border);
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+}
+.carousel-viajar .carousel-indicators button.active {
+  background: var(--color-primary);
+}
+
+/* ============================================================
+   STAT ICONS
+============================================================ */
+.stat-icon {
+  display: block;
+  font-size: 2rem;
+  color: rgba(255,255,255,.7);
+  margin-bottom: .5rem;
+}
+
+/* ============================================================
+   NEWSLETTER FEEDBACK
+============================================================ */
+.newsletter-msg {
+  display: block;
+  font-size: .82rem;
+  margin-top: .4rem;
+  min-height: 1rem;
+}
+.newsletter-msg.ok  { color: #4caf50; }
+.newsletter-msg.err { color: #e53935; }
+
+/* ============================================================
+   DARK MODE – navbar y dropdown
+============================================================ */
+[data-theme="dark"] .viajar-navbar {
+  background-color: var(--color-surface) !important;
+}
+[data-theme="dark"] .mega-menu-bs,
+[data-theme="dark"] .viajar-navbar .dropdown-menu {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+[data-theme="dark"] .viajar-navbar .dropdown-item {
+  color: var(--color-text);
+}
+[data-theme="dark"] .carousel-viajar .testimonial-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}

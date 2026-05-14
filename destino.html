@@ -7,286 +7,263 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/bootstrap-custom.css" />
   <link rel="stylesheet" href="css/destino.css" />
 </head>
 <body>
 
-<!-- ============================================================
-     HEADER 
-============================================================ -->
-<header class="site-header" role="banner">
-  <div class="header-inner">
-    <a href="index.html" class="logo" aria-label="ViajAR inicio">
-      <svg class="logo-svg" viewBox="0 0 48 48" aria-hidden="true">
+<!-- NAVBAR BOOTSTRAP -->
+<nav class="navbar navbar-expand-lg viajar-navbar sticky-top" aria-label="Navegación principal">
+  <div class="container-fluid px-4">
+    <a href="index.html" class="navbar-brand viajar-logo">
+      <svg viewBox="0 0 48 48" aria-hidden="true" class="logo-svg">
         <circle cx="24" cy="24" r="22" class="logo-circle"/>
-        <path d="M14 30 Q24 10 34 30" class="logo-path" fill="none" stroke-width="3"/>
+        <path d="M14 30 Q24 10 34 30" fill="none" stroke="#fff" stroke-width="3"/>
         <circle cx="24" cy="20" r="4" class="logo-dot"/>
       </svg>
-      <span>Ele<em>AR</em></span>
+      Ele<em>AR</em>
     </a>
-
-    <nav class="main-nav" aria-label="Navegación principal">
-      <ul class="nav-list" role="list">
-        <li class="nav-item has-mega">
-          <a href="#" class="nav-link nav-active" aria-haspopup="true">Destinos</a>
-          <div class="mega-menu" role="region" aria-label="Submenú Destinos">
-            <div class="mega-col">
-              <h3 class="mega-title">Por Región</h3>
-              <ul>
-                <li><a href="destino.html">Noroeste (NOA)</a></li>
-                <li><a href="destino.html">Patagonia</a></li>
-                <li><a href="destino.html">Litoral</a></li>
-                <li><a href="destino.html">Cuyo</a></li>
-              </ul>
-            </div>
-            <div class="mega-col">
-              <h3 class="mega-title">Por Tipo</h3>
-              <ul>
-                <li><a href="destino.html">Cultural</a></li>
-                <li><a href="destino.html">Naturaleza</a></li>
-                <li><a href="destino.html">Sol y Playa</a></li>
-                <li><a href="destino.html">Gastronómico</a></li>
-              </ul>
-            </div>
-            <div class="mega-col mega-featured">
-              <h3 class="mega-title">Destacado</h3>
-              <div class="mega-card">
-                <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=260&q=70" alt="Quebrada de Humahuaca" />
-                <span>Quebrada de Humahuaca</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-map-location-dot me-1"></i> Destinos
+          </a>
+          <div class="dropdown-menu mega-menu-bs p-4">
+            <div class="row g-4">
+              <div class="col-6">
+                <h6 class="mega-title">Por Región</h6>
+                <ul class="list-unstyled">
+                  <li><a href="destino.html" class="dropdown-item px-0">Noroeste (NOA)</a></li>
+                  <li><a href="destino.html" class="dropdown-item px-0">Patagonia</a></li>
+                  <li><a href="destino.html" class="dropdown-item px-0">Litoral</a></li>
+                  <li><a href="destino.html" class="dropdown-item px-0">Cuyo</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <h6 class="mega-title">Por Tipo</h6>
+                <ul class="list-unstyled">
+                  <li><a href="destino.html" class="dropdown-item px-0">Cultural</a></li>
+                  <li><a href="destino.html" class="dropdown-item px-0">Naturaleza</a></li>
+                  <li><a href="destino.html" class="dropdown-item px-0">Sol y Playa</a></li>
+                  <li><a href="destino.html" class="dropdown-item px-0">Gastronómico</a></li>
+                </ul>
               </div>
             </div>
           </div>
         </li>
-        <li class="nav-item has-mega">
-          <a href="#" class="nav-link" aria-haspopup="true">Agencias</a>
-          <div class="mega-menu" role="region" aria-label="Submenú Agencias">
-            <div class="mega-col">
-              <h3 class="mega-title">Explorar</h3>
-              <ul>
-                <li><a href="agencias.html">Todas las Agencias</a></li>
-                <li><a href="agencias.html">Mejor Valoradas</a></li>
-              </ul>
-            </div>
-          </div>
+        <li class="nav-item"><a class="nav-link" href="agencias.html"><i class="fa-solid fa-building me-1"></i>Agencias</a></li>
+        <li class="nav-item"><a class="nav-link" href="precios.html"><i class="fa-solid fa-tag me-1"></i>Precios</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i>Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="fa-solid fa-envelope me-1"></i>Contacto</a></li>
+        <li class="nav-item"><a class="nav-link nav-phishing" href="phishing.html"><i class="fa-solid fa-shield-halved me-1"></i>Seguridad</a></li>
+        <li class="nav-item ms-lg-2">
+          <button class="btn btn-sm theme-toggle-bs" id="themeToggle" aria-label="Cambiar tema">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </button>
         </li>
-        <li class="nav-item has-mega">
-          <a href="#" class="nav-link" aria-haspopup="true">Precios</a>
-          <div class="mega-menu" role="region" aria-label="Submenú Precios">
-            <div class="mega-col">
-              <h3 class="mega-title">Planes</h3>
-              <ul>
-                <li><a href="precios.html">Económico</a></li>
-                <li><a href="precios.html">Estándar</a></li>
-                <li><a href="precios.html">Premium</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
       </ul>
-    </nav>
-
-    <div class="header-controls">
-      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </div>
-</header>
+</nav>
 
-<!-- ============================================================
-     HERO PEQUEÑO – solo para páginas internas
-============================================================ -->
+<!-- HERO INTERNO -->
 <section class="page-hero" aria-label="Encabezado de página">
   <div class="page-hero-content">
-    <p class="section-tag">Explorá Argentina</p>
+    <p class="section-tag"><i class="fa-solid fa-compass me-1"></i>Explorá Argentina</p>
     <h1 class="page-hero-title">Todos los Destinos</h1>
     <p class="page-hero-sub">Filtrá por categoría y encontrá tu próxima aventura.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     FILTROS + GALERÍA MASONRY
-     Los filtros funcionan 100% con CSS usando :checked
+     FILTROS JQUERY + GALERÍA GRID BOOTSTRAP
 ============================================================ -->
 <section class="section destinos-section" aria-labelledby="destinos-heading">
   <div class="container">
-
     <h2 id="destinos-heading" class="sr-only">Galería de destinos</h2>
 
-    <!-- Radio buttons ocultos — controlan el filtro -->
-    <input type="radio" name="filtro" id="f-todos"        class="filtro-input" checked />
-    <input type="radio" name="filtro" id="f-cultural"     class="filtro-input" />
-    <input type="radio" name="filtro" id="f-naturaleza"   class="filtro-input" />
-    <input type="radio" name="filtro" id="f-playa"        class="filtro-input" />
-    <input type="radio" name="filtro" id="f-gastronomico" class="filtro-input" />
-    <input type="radio" name="filtro" id="f-religioso"    class="filtro-input" />
-
-    <!-- Botones de filtro visibles (labels que activan los radios) -->
-    <div class="filtros" role="group" aria-label="Filtrar por categoría">
-      <label for="f-todos"        class="filtro-btn">🗺️ Todos</label>
-      <label for="f-cultural"     class="filtro-btn">🏛️ Cultural</label>
-      <label for="f-naturaleza"   class="filtro-btn">🌿 Naturaleza</label>
-      <label for="f-playa"        class="filtro-btn">🏖️ Sol y Playa</label>
-      <label for="f-gastronomico" class="filtro-btn">🍽️ Gastronómico</label>
-      <label for="f-religioso"    class="filtro-btn">⛪ Religioso</label>
+    <!-- Botones de filtro jQuery -->
+    <div class="filtros d-flex flex-wrap gap-2 justify-content-center mb-5"
+      role="group" aria-label="Filtrar por categoría" id="filtrosGaleria">
+      <button class="filtro-btn active" data-filtro="todos">
+        <i class="fa-solid fa-earth-americas me-1"></i> Todos
+      </button>
+      <button class="filtro-btn" data-filtro="cultural">
+        <i class="fa-solid fa-landmark me-1"></i> Cultural
+      </button>
+      <button class="filtro-btn" data-filtro="naturaleza">
+        <i class="fa-solid fa-tree me-1"></i> Naturaleza
+      </button>
+      <button class="filtro-btn" data-filtro="playa">
+        <i class="fa-solid fa-umbrella-beach me-1"></i> Sol y Playa
+      </button>
+      <button class="filtro-btn" data-filtro="gastronomico">
+        <i class="fa-solid fa-utensils me-1"></i> Gastronómico
+      </button>
+      <button class="filtro-btn" data-filtro="religioso">
+        <i class="fa-solid fa-church me-1"></i> Religioso
+      </button>
     </div>
 
-    <!-- Galería Masonry con CSS Grid -->
-    <div class="masonry-grid" aria-label="Galería de destinos">
+    <!-- Grid Bootstrap responsivo: 1 col mobile / 2 tablet / 3 desktop -->
+    <div class="row g-4" id="galeriaDestinos">
 
-      <!-- CULTURAL -->
-      <article class="dest-item cat-cultural" tabindex="0" aria-label="Quebrada de Humahuaca">
-        <div class="dest-item-img">
-          <img src="https://www.quebradadehumahuaca.com/info-gral/imagenes/quebrada-de-humahuaca-pucara-tilcara.jpg" alt="Quebrada de Humahuaca" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Quebrada de Humahuaca</h3>
-            <p>📍 Jujuy · Cultural</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="cultural">
+        <article class="dest-item" tabindex="0" aria-label="Quebrada de Humahuaca">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=600&q=75" alt="Quebrada de Humahuaca" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Quebrada de Humahuaca</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Jujuy · Cultural</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- NATURALEZA -->
-      <article class="dest-item cat-naturaleza tall" tabindex="0" aria-label="Glaciar Perito Moreno">
-        <div class="dest-item-img">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/6c/d1/ab/glaciar-perito-moreno.jpg?w=1200&h=1200&s=1" alt="Glaciar Perito Moreno" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Glaciar Perito Moreno</h3>
-            <p>📍 Santa Cruz · Naturaleza</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="naturaleza">
+        <article class="dest-item" tabindex="0" aria-label="Glaciar Perito Moreno">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="Glaciar Perito Moreno" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Glaciar Perito Moreno</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Santa Cruz · Naturaleza</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- NATURALEZA -->
-      <article class="dest-item cat-naturaleza" tabindex="0" aria-label="Cataratas del Iguazú">
-        <div class="dest-item-img">
-          <img src="https://www.uncuyo.edu.ar/prensa/cache/cataratasiguazu4_608_1076.jpg" alt="Cataratas del Iguazú" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Cataratas del Iguazú</h3>
-            <p>📍 Misiones · Naturaleza</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="naturaleza">
+        <article class="dest-item" tabindex="0" aria-label="Cataratas del Iguazú">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=75" alt="Cataratas del Iguazú" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Cataratas del Iguazú</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Misiones · Naturaleza</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- GASTRONOMICO -->
-      <article class="dest-item cat-gastronomico wide" tabindex="0" aria-label="Mendoza">
-        <div class="dest-item-img">
-          <img src="https://www.grantthornton.com.ar/contentassets/e80f806a07234fb0afb346058c1bc24c/banner---hecho-en-mendoza.jpg" alt="Mendoza" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Mendoza y el vino</h3>
-            <p>📍 Mendoza · Gastronómico</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="gastronomico">
+        <article class="dest-item" tabindex="0" aria-label="Mendoza">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1550184658-ff6132a71714?w=600&q=75" alt="Mendoza" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Mendoza y el vino</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Mendoza · Gastronómico</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- CULTURAL -->
-      <article class="dest-item cat-cultural tall" tabindex="0" aria-label="Buenos Aires">
-        <div class="dest-item-img">
-          <img src="https://images.unsplash.com/photo-1612294037637-ec328d0e075e?w=600&q=75" alt="Buenos Aires" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Buenos Aires</h3>
-            <p>📍 CABA · Cultural</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="cultural">
+        <article class="dest-item" tabindex="0" aria-label="Buenos Aires">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1612294037637-ec328d0e075e?w=600&q=75" alt="Buenos Aires" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Buenos Aires</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>CABA · Cultural</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- PLAYA -->
-      <article class="dest-item cat-playa" tabindex="0" aria-label="Mar del Plata">
-        <div class="dest-item-img">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=75" alt="Mar del Plata" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Mar del Plata</h3>
-            <p>📍 Buenos Aires · Sol y Playa</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="playa">
+        <article class="dest-item" tabindex="0" aria-label="Mar del Plata">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=75" alt="Mar del Plata" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Mar del Plata</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Buenos Aires · Sol y Playa</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- RELIGIOSO -->
-      <article class="dest-item cat-religioso" tabindex="0" aria-label="Luján">
-        <div class="dest-item-img">
-          <img src="https://cdn.myportfolio.com/03517891-fc4b-427c-86a4-95e56a1202ad/14f445d8-3654-404d-aa48-1fa9a4a72701_rw_1200.jpg?h=167b95052759c926bd038abfbc8f239f" alt="Basílica de Luján" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Basílica de Luján</h3>
-            <p>📍 Luján · Religioso</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="religioso">
+        <article class="dest-item" tabindex="0" aria-label="Basílica de Luján">
+          <div class="dest-item-img">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/50/23/c0/basilica.jpg?w=1200&h=-1&s=1" alt="Basílica de Luján" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Basílica de Luján</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Luján · Religioso</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- PLAYA -->
-      <article class="dest-item cat-playa wide" tabindex="0" aria-label="Villa Gesell">
-        <div class="dest-item-img">
-          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=75" alt="Villa Gesell" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Villa Gesell</h3>
-            <p>📍 Buenos Aires · Sol y Playa</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="playa">
+        <article class="dest-item" tabindex="0" aria-label="Villa Gesell">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=75" alt="Villa Gesell" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Villa Gesell</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Buenos Aires · Sol y Playa</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- GASTRONOMICO -->
-      <article class="dest-item cat-gastronomico" tabindex="0" aria-label="Córdoba">
-        <div class="dest-item-img">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75" alt="Córdoba gastronomía" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Córdoba Gourmet</h3>
-            <p>📍 Córdoba · Gastronómico</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+      <div class="col-12 col-sm-6 col-lg-4 dest-col" data-cat="gastronomico">
+        <article class="dest-item" tabindex="0" aria-label="Córdoba Gourmet">
+          <div class="dest-item-img">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75" alt="Córdoba gastronomía" loading="lazy" />
+            <div class="dest-item-overlay">
+              <h3>Córdoba Gourmet</h3>
+              <p><i class="fa-solid fa-location-dot me-1"></i>Córdoba · Gastronómico</p>
+              <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-      <!-- RELIGIOSO -->
-      <article class="dest-item cat-religioso tall" tabindex="0" aria-label="Cerro San Bernardo">
-        <div class="dest-item-img">
-          <img src="https://rutadelmate.com/wp-content/uploads/2024/10/49752268033_4c870e99a2_b.jpg" alt="Salta religiosa" loading="lazy" />
-          <div class="dest-item-overlay">
-            <h3>Salta la Linda</h3>
-            <p>📍 Salta · Religioso / Cultural</p>
-            <a href="#tabla" class="btn btn-sm btn-outline-white">Ver precio</a>
-          </div>
-        </div>
-      </article>
+    </div><!-- /row -->
 
-    </div><!-- /masonry-grid -->
+    <!-- Mensaje cuando no hay resultados -->
+    <div id="sinResultados" class="text-center py-5" style="display:none;">
+      <i class="fa-solid fa-magnifying-glass fa-3x mb-3" style="color:var(--color-text-muted)"></i>
+      <p class="text-muted">No hay destinos en esta categoría aún.</p>
+    </div>
+
   </div>
 </section>
 
-<!-- ============================================================
-     TABLA RESPONSIVA DE PRECIOS Y DESTINOS
-============================================================ -->
+<!-- TABLA RESPONSIVA BOOTSTRAP -->
 <section class="section tabla-section" id="tabla" aria-labelledby="tabla-heading">
   <div class="container">
-    <div class="section-head">
-      <p class="section-tag">Compará</p>
+    <div class="section-head text-center mb-4">
+      <p class="section-tag"><i class="fa-solid fa-table me-1"></i>Compará</p>
       <h2 id="tabla-heading" class="section-title">Precios por Destino</h2>
       <p class="section-sub">Todos los precios incluyen alojamiento 3 noches. Transporte opcional.</p>
     </div>
 
-    <!-- Wrapper scrolleable en mobile -->
-    <div class="table-wrap" role="region" aria-label="Tabla de precios" tabindex="0">
-      <table class="precio-tabla">
+    <!-- table-responsive de Bootstrap: scroll horizontal en mobile -->
+    <div class="table-responsive rounded-3 shadow-sm">
+      <table class="table table-hover precio-tabla mb-0">
         <thead>
           <tr>
-            <th scope="col">Destino</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Duración</th>
-            <th scope="col">Precio base</th>
-            <th scope="col">Precio premium</th>
-            <th scope="col">Disponibilidad</th>
+            <th scope="col"><i class="fa-solid fa-map-pin me-1"></i>Destino</th>
+            <th scope="col"><i class="fa-solid fa-tag me-1"></i>Categoría</th>
+            <th scope="col"><i class="fa-solid fa-clock me-1"></i>Duración</th>
+            <th scope="col"><i class="fa-solid fa-dollar-sign me-1"></i>Precio base</th>
+            <th scope="col"><i class="fa-solid fa-crown me-1"></i>Precio premium</th>
+            <th scope="col"><i class="fa-solid fa-circle-check me-1"></i>Disponibilidad</th>
           </tr>
         </thead>
         <tbody>
@@ -296,7 +273,7 @@
             <td data-label="Duración">4 días</td>
             <td data-label="Precio base">$45.000</td>
             <td data-label="Precio premium">$72.000</td>
-            <td data-label="Disponibilidad"><span class="disponible">✓ Disponible</span></td>
+            <td data-label="Disponibilidad"><span class="disponible"><i class="fa-solid fa-check me-1"></i>Disponible</span></td>
           </tr>
           <tr>
             <td data-label="Destino">Glaciar Perito Moreno</td>
@@ -304,7 +281,7 @@
             <td data-label="Duración">5 días</td>
             <td data-label="Precio base">$120.000</td>
             <td data-label="Precio premium">$185.000</td>
-            <td data-label="Disponibilidad"><span class="disponible">✓ Disponible</span></td>
+            <td data-label="Disponibilidad"><span class="disponible"><i class="fa-solid fa-check me-1"></i>Disponible</span></td>
           </tr>
           <tr>
             <td data-label="Destino">Cataratas del Iguazú</td>
@@ -312,7 +289,7 @@
             <td data-label="Duración">3 días</td>
             <td data-label="Precio base">$85.000</td>
             <td data-label="Precio premium">$130.000</td>
-            <td data-label="Disponibilidad"><span class="disponible">✓ Disponible</span></td>
+            <td data-label="Disponibilidad"><span class="disponible"><i class="fa-solid fa-check me-1"></i>Disponible</span></td>
           </tr>
           <tr>
             <td data-label="Destino">Mendoza y el vino</td>
@@ -320,7 +297,7 @@
             <td data-label="Duración">4 días</td>
             <td data-label="Precio base">$60.000</td>
             <td data-label="Precio premium">$95.000</td>
-            <td data-label="Disponibilidad"><span class="agotado">✗ Agotado</span></td>
+            <td data-label="Disponibilidad"><span class="agotado"><i class="fa-solid fa-xmark me-1"></i>Agotado</span></td>
           </tr>
           <tr>
             <td data-label="Destino">Mar del Plata</td>
@@ -328,7 +305,7 @@
             <td data-label="Duración">3 días</td>
             <td data-label="Precio base">$38.000</td>
             <td data-label="Precio premium">$58.000</td>
-            <td data-label="Disponibilidad"><span class="disponible">✓ Disponible</span></td>
+            <td data-label="Disponibilidad"><span class="disponible"><i class="fa-solid fa-check me-1"></i>Disponible</span></td>
           </tr>
           <tr>
             <td data-label="Destino">Basílica de Luján</td>
@@ -336,68 +313,63 @@
             <td data-label="Duración">2 días</td>
             <td data-label="Precio base">$22.000</td>
             <td data-label="Precio premium">$35.000</td>
-            <td data-label="Disponibilidad"><span class="disponible">✓ Disponible</span></td>
+            <td data-label="Disponibilidad"><span class="disponible"><i class="fa-solid fa-check me-1"></i>Disponible</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="tabla-nota">* Precios en pesos argentinos. Actualizados a mayo 2026.</p>
+    <p class="tabla-nota mt-3">* Precios en pesos argentinos. Actualizados a 2026.</p>
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER (igual al index)
-============================================================ -->
+<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-col">
-      <h4 class="footer-title">Suscribite al Newsletter</h4>
-      <p>Recibí ofertas exclusivas y novedades de destinos cada semana.</p>
-      <form class="newsletter-form" novalidate aria-label="Formulario newsletter">
-        <label for="newsletter-email" class="sr-only">Correo electrónico</label>
-        <input type="email" id="newsletter-email" name="email" placeholder="tu@email.com" required aria-required="true" />
+      <h4 class="footer-title"><i class="fa-solid fa-paper-plane me-2"></i>Newsletter</h4>
+      <p>Recibí ofertas exclusivas cada semana.</p>
+      <form class="newsletter-form" novalidate aria-label="Newsletter">
+        <label for="nl-email" class="sr-only">Email</label>
+        <input type="email" id="nl-email" placeholder="tu@email.com" required />
         <button type="submit" class="btn btn-primary btn-sm">Suscribirse</button>
       </form>
     </div>
     <div class="footer-col">
-      <h4 class="footer-title">Sitio</h4>
+      <h4 class="footer-title"><i class="fa-solid fa-sitemap me-2"></i>Sitio</h4>
       <ul class="footer-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="destino.html">Destinos</a></li>
-        <li><a href="agencias.html">Agencias</a></li>
-        <li><a href="precios.html">Precios</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html"><i class="fa-solid fa-house fa-sm me-2"></i>Inicio</a></li>
+        <li><a href="destino.html"><i class="fa-solid fa-map fa-sm me-2"></i>Destinos</a></li>
+        <li><a href="agencias.html"><i class="fa-solid fa-building fa-sm me-2"></i>Agencias</a></li>
+        <li><a href="precios.html"><i class="fa-solid fa-tag fa-sm me-2"></i>Precios</a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-newspaper fa-sm me-2"></i>Blog</a></li>
+        <li><a href="contacto.html"><i class="fa-solid fa-envelope fa-sm me-2"></i>Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4 class="footer-title">Redes Sociales</h4>
+      <h4 class="footer-title"><i class="fa-solid fa-share-nodes me-2"></i>Redes</h4>
       <div class="social-links" role="list">
-        <a href="#" class="social-btn" role="listitem" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Instagram
-        </a>
-        <a href="#" class="social-btn" role="listitem" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          Facebook
-        </a>
+        <a href="#" class="social-btn" role="listitem" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#" class="social-btn" role="listitem" aria-label="Facebook"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        <a href="#" class="social-btn" role="listitem" aria-label="YouTube"><i class="fa-brands fa-youtube"></i> YouTube</a>
       </div>
     </div>
     <div class="footer-col">
-      <h4 class="footer-title">Encontranos</h4>
-      <div class="map-embed" role="region" aria-label="Mapa de ubicación">
+      <h4 class="footer-title"><i class="fa-solid fa-location-dot me-2"></i>Encontranos</h4>
+      <div class="map-embed" role="region" aria-label="Mapa">
         <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.332%2C-24.236%2C-65.277%2C-24.185&layer=mapnik&marker=-24.211%2C-65.305" title="Mapa" loading="lazy" allowfullscreen></iframe>
       </div>
-      <p class="footer-address">📍 San Salvador de Jujuy, Argentina</p>
+      <p class="footer-address"><i class="fa-solid fa-location-dot me-1"></i>San Salvador de Jujuy</p>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 EleAR.</p>
-    <p>Todos los derechos reservados.</p>
+    <p>Todos los derechos reservados</p>
   </div>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
-
+<script src="js/destino.js"></script>
 </body>
 </html>

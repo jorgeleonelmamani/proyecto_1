@@ -1,0 +1,204 @@
+.page-hero {
+  background:
+    linear-gradient(rgba(10,6,0,.65), rgba(10,6,0,.75)),
+    url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1400&q=80')
+    center / cover no-repeat;
+  padding: 5rem 1rem 4rem;
+  text-align: center;
+  color: #fff;
+}
+.page-hero-phishing {
+  background-image:
+    linear-gradient(rgba(100,0,0,.65), rgba(30,0,0,.8)),
+    url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1400&q=80');
+}
+.page-hero-content { max-width: 640px; margin-inline: auto; }
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  margin: var(--space-sm) 0;
+}
+.page-hero-sub { font-size: 1.05rem; opacity: .88; }
+
+/* ── INTRO ── */
+.intro-section { background: var(--color-bg); }
+
+.stat-phishing-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  color: var(--color-text);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.stat-phishing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--color-shadow);
+}
+.stat-phishing-card i { color: var(--color-primary); }
+.stat-num { font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; margin: .25rem 0; }
+.stat-lbl { font-size: .82rem; color: var(--color-text-muted); }
+
+/* ── SEÑALES ── */
+.senales-section { background: var(--color-surface2); }
+
+.senal-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  height: 100%;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.senal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--color-shadow);
+}
+.senal-card h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: var(--space-sm); }
+.senal-card p  { font-size: .88rem; color: var(--color-text-muted); }
+.senal-card code { background: var(--color-surface2); padding: 1px 5px; border-radius: 3px; font-size: .82rem; }
+
+.senal-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: var(--space-md);
+}
+.senal-icon--red    { background: #c62828; }
+.senal-icon--orange { background: #e65100; }
+.senal-icon--yellow { background: #f9a825; }
+
+.senal-ejemplo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: var(--space-sm);
+  font-size: .8rem;
+}
+.malo  { color: #c62828; }
+.bueno { color: #2e7d32; }
+
+/* ── SIMULACIÓN ── */
+.simulacion-section { background: var(--color-bg); }
+
+.email-simulado {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--color-shadow);
+  font-size: .92rem;
+}
+
+.email-header {
+  background: var(--color-surface2);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-lg);
+}
+.email-meta { display: flex; flex-direction: column; gap: 4px; font-size: .88rem; }
+.email-meta strong { color: var(--color-text-muted); min-width: 60px; display: inline-block; }
+
+.email-body {
+  padding: var(--space-lg);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* Elementos con error — clickeables */
+.error-item {
+  border-bottom: 2px dashed #e53935;
+  cursor: pointer;
+  transition: background var(--transition);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+.error-item:hover { background: rgba(229,57,53,.12); }
+.error-item.encontrado {
+  background: rgba(229,57,53,.15);
+  border-bottom-color: transparent;
+  text-decoration: line-through;
+  opacity: .6;
+  cursor: default;
+}
+
+.btn-email {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff !important;
+  padding: .4rem 1rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none !important;
+  font-size: .88rem;
+}
+
+/* Panel de errores */
+.errores-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 4px 24px var(--color-shadow);
+  position: sticky;
+  top: 80px;
+}
+.errores-titulo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: var(--space-md); }
+
+.errores-lista { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+.error-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: .88rem;
+  color: var(--color-text-muted);
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  transition: background var(--transition);
+}
+.error-check.encontrado {
+  background: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+[data-theme="dark"] .error-check.encontrado { background: #1b3a1f; border-color: #4caf50; }
+
+.error-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+.error-check.encontrado .error-icon i::before { content: "\f058"; } /* fa-circle-check */
+
+/* Progreso */
+.progress { height: 8px; border-radius: 4px; background: var(--color-surface2); }
+
+/* ── CONSEJOS ── */
+.consejos-section { background: var(--color-surface2); }
+
+.consejo-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  height: 100%;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.consejo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--color-shadow);
+}
+.consejo-card i { color: var(--color-primary); }
+.consejo-card h5 { font-family: var(--font-display); font-weight: 700; margin-bottom: var(--space-sm); }
+.consejo-card p  { font-size: .88rem; color: var(--color-text-muted); }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVO ── */
+@media (max-width: 600px) {
+  .errores-panel { position: static; }
+}

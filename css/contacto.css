@@ -1,4 +1,6 @@
-
+/* ============================================================
+   HERO INTERNO (Manteniendo tu estilo visual)
+============================================================ */
 .page-hero {
   background:
     linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
@@ -13,290 +15,128 @@
     linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
     url('https://images.unsplash.com/photo-1423592707957-3b212afa6733?w=1400&q=80');
 }
-.page-hero-content { max-width: 600px; margin-inline: auto; }
 .page-hero-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 900;
-  margin: var(--space-sm) 0;
-}
-.page-hero-sub { font-size: 1.05rem; opacity: .88; }
-
-.nav-active {
-  color: var(--color-primary) !important;
-  background: var(--color-surface2) !important;
+  margin: 0.5rem 0;
 }
 
 /* ============================================================
-   LAYOUT PRINCIPAL
+   LAYOUT PRINCIPAL (Grid Responsivo)
 ============================================================ */
-.contacto-section { background: var(--color-bg); }
+.contacto-section { background: var(--color-bg); padding: 4rem 0; }
 
 .contacto-grid {
   display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: var(--space-xl);
+  grid-template-columns: 1fr 360px; /* Layout de revista */
+  gap: 2rem;
   align-items: start;
 }
 
 /* ============================================================
-   FORMULARIO
+   FORMULARIO & VALIDACIÓN (Sincronizado con JS)
 ============================================================ */
 .form-wrap {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  padding: 2rem;
   box-shadow: 0 4px 24px var(--color-shadow);
 }
 
-.contacto-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-}
-
-/* Grupos que ocupan todo el ancho */
-.form-group--full { grid-column: 1 / -1; }
-
-.form-group { display: flex; flex-direction: column; gap: 6px; position: relative; }
-
-.form-label {
-  font-size: .88rem;
-  font-weight: 600;
-  color: var(--color-text);
-}
-.required { color: var(--color-primary); }
-
-/* Input base */
 .form-input {
   padding: .7rem 1rem;
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: .95rem;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: all 0.3s ease;
   width: 100%;
 }
+
 .form-input:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(200,98,42,.15);
 }
 
-/* ---- VALIDACIÓN EN TIEMPO REAL con :valid / :invalid ---- */
-
-/* Input válido  */
-.form-input:not(:placeholder-shown):valid {
-  border-color: #4caf50;
-}
-/* Input inválido  */
-.form-input:not(:placeholder-shown):invalid {
-  border-color: #e53935;
+/* --- CLASES DE ESTADO (Inyectadas por contacto.js) --- */
+.campo-ok {
+  border-color: #198754 !important; /* Verde Bootstrap */
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25) !important;
 }
 
-/* Mensajes de validación — ocultos por defecto */
-.field-msg {
-  font-size: .78rem;
+.campo-error {
+  border-color: #dc3545 !important; /* Rojo Bootstrap */
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Contenedor de mensajes de error/éxito */
+.campo-fb {
+  font-size: 0.8rem;
   font-weight: 600;
-  display: none;
+  margin-top: 5px;
+  min-height: 1.2rem; /* Evita saltos de layout */
 }
-.field-ok  { color: #2e7d32; }
-.field-err { color: #c62828; }
-
-/* Mostrar el mensaje correcto según estado del input */
-.form-input:not(:placeholder-shown):valid   ~ .field-ok  { display: block; }
-.form-input:not(:placeholder-shown):invalid ~ .field-err { display: block; }
-
-/* Select y textarea */
-.form-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b5a3e' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
-  cursor: pointer;
-}
-.form-select:valid { border-color: #4caf50; }
-
-.form-textarea {
-  resize: vertical;
-  min-height: 140px;
-  line-height: 1.6;
-}
-
-/* Checkbox personalizado */
-.form-group--check { flex-direction: row; align-items: center; }
-.check-label {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  cursor: pointer;
-  font-size: .9rem;
-  color: var(--color-text-muted);
-  user-select: none;
-}
-.check-label input[type="checkbox"] { display: none; }
-.check-custom {
-  width: 20px; height: 20px;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-bg);
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  transition: background var(--transition), border-color var(--transition);
-}
-.check-label input:checked + .check-custom {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-}
-.check-label input:checked + .check-custom::after {
-  content: '✓';
-  color: #fff;
-  font-size: .8rem;
-  font-weight: 700;
-}
-.check-label a { color: var(--color-primary); text-decoration: underline; }
-
-/* Botón submit */
-.btn-submit {
-  width: 100%;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: .9rem;
-  font-size: 1rem;
-  position: relative;
-}
-
-/* ---- SPINNER CSS ---- */
-.spinner {
-  display: none;
-  width: 20px; height: 20px;
-  border: 3px solid rgba(255,255,255,.3);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin .7s linear infinite;
-  flex-shrink: 0;
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.contacto-form.loading .spinner   { display: block; }
-.contacto-form.loading .btn-text  { opacity: .6; }
-.contacto-form.loading .btn-submit { pointer-events: none; opacity: .85; }
+.fb-ok { color: #198754; }
+.fb-error { color: #dc3545; }
 
 /* ============================================================
-   INFO DE CONTACTO 
+   INFO DE CONTACTO & MAPA
 ============================================================ */
 .contacto-info {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: 1.5rem;
   box-shadow: 0 4px 24px var(--color-shadow);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
-}
-
-.info-title {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: var(--space-xs);
+  gap: 1.5rem;
 }
 
 .info-item {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-  padding: var(--space-sm) 0;
+  gap: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--color-border);
 }
-.info-item:last-of-type { border-bottom: none; }
+.info-item:last-child { border-bottom: none; }
 
 .info-icon {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  width: 36px;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  width: 30px;
   text-align: center;
 }
-.info-item strong { display: block; font-weight: 700; font-size: .9rem; }
-.info-item p { font-size: .88rem; color: var(--color-text-muted); margin-top: 2px; }
 
 .info-map {
   border-radius: var(--radius-md);
   overflow: hidden;
-  height: 180px;
+  height: 200px;
   border: 1px solid var(--color-border);
 }
-.info-map iframe { width: 100%; height: 100%; border: none; }
 
 /* ============================================================
-   MODAL DE CONFIRMACIÓN
+   MODAL PERSONALIZACIÓN (Bootstrap maneja la estructura)
 ============================================================ */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 200;
-  padding: var(--space-md);
-  /* Oculto por defecto */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition);
+.modal-icon {
+  font-size: 4rem;
+  color: #198754;
+  margin-bottom: 1rem;
 }
-/* Visible cuando tiene la clase .modal-visible */
-.modal-overlay.modal-visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg);
-  text-align: center;
-  max-width: 420px;
-  width: 100%;
-  box-shadow: 0 24px 64px rgba(0,0,0,.25);
-  transform: translateY(20px) scale(.96);
-  transition: transform var(--transition);
-}
-.modal-overlay.modal-visible .modal {
-  transform: translateY(0) scale(1);
-}
-
-.modal-icon { font-size: 3.5rem; margin-bottom: var(--space-md); }
-.modal-titulo {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 900;
-  margin-bottom: var(--space-sm);
-  color: var(--color-text);
-}
-.modal-texto {
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
-  line-height: 1.6;
-}
+.modal-titulo { font-weight: 900; color: var(--color-text); }
 
 /* ============================================================
    RESPONSIVO
 ============================================================ */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .contacto-grid { grid-template-columns: 1fr; }
-  .contacto-info { order: -1; } /* Info arriba en mobile */
+  .contacto-info { order: -1; } /* Info arriba en tablets/mobile */
 }
 
-@media (max-width: 600px) {
-  .contacto-form { grid-template-columns: 1fr; }
-  .form-wrap { padding: var(--space-md); }
+@media (max-width: 576px) {
+  .form-wrap { padding: 1.2rem; }
+  .page-hero { padding: 3rem 1rem; }
 }

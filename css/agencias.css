@@ -1,4 +1,6 @@
-
+/* ============================================================
+    HERO & NAV
+============================================================ */
 .page-hero {
   background:
     linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
@@ -8,100 +10,76 @@
   text-align: center;
   color: #fff;
 }
+
 .page-hero-agencias {
   background-image:
     linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
     url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1400&q=80');
 }
-.page-hero-content { max-width: 600px; margin-inline: auto; }
+
 .page-hero-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 900;
   margin: var(--space-sm) 0;
-  line-height: 1.15;
 }
-.page-hero-sub { font-size: 1.05rem; opacity: .88; }
-
-.nav-active {
-  color: var(--color-primary) !important;
-  background: var(--color-surface2) !important;
-}
-
 
 /* ============================================================
-   GRID DE AGENCIAS
+    GRID DE AGENCIAS
 ============================================================ */
-.agencias-section { background: var(--color-bg); }
-
-.agencias-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-xl);
-}
-
+.agencias-section { background: var(--color-bg); padding: 4rem 0; }
 
 .flip-card {
-
   perspective: 1000px;
-  height: 340px;
+  height: 420px; /* Aumentado para que entre bien el contenido del dorso */
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
 .flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
-
-  /* Necesario para que las dos caras coexistan */
   transform-style: preserve-3d;
-
-  /* Animación de la rotación */
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Rotar al hacer hover o focus */
-.flip-card:hover .flip-inner,
-.flip-card:focus .flip-inner {
+/* Requisito: El giro ahora depende de esta clase que pone jQuery */
+.flip-card.flipped .flip-inner {
   transform: rotateY(180deg);
 }
 
-/* Propiedades comunes a las dos caras */
-.flip-front,
-.flip-back {
+.flip-front, .flip-back {
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-lg);
-  /* Esconder la cara que está "dada vuelta" */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
 }
 
 /* FRENTE */
 .flip-front {
   background: var(--color-surface);
+  align-items: center;
+  justify-content: center;
   text-align: center;
   box-shadow: 0 4px 24px var(--color-shadow);
 }
 
-/* DORSO — ya viene rotado 180° para que al girar quede bien */
+/* DORSO */
 .flip-back {
   background: var(--color-primary);
   color: #fff;
   transform: rotateY(180deg);
-  text-align: left;
-  justify-content: flex-start;
-  padding-top: var(--space-xl);
+  justify-content: center;
 }
 
-/* Avatar circular en el frente */
+/* AVATARES */
 .flip-avatar {
   width: 72px;
   height: 72px;
@@ -113,106 +91,63 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-xs);
-  /* Animación de entrada en el avatar */
-  transition: transform var(--transition);
+  margin-bottom: var(--space-sm);
+  transition: transform 0.3s ease;
 }
-.flip-card:hover .flip-avatar { transform: scale(1.08); }
 
-/* Variantes de color del avatar */
+/* Variantes de color */
 .flip-avatar--verde   { background: #2e7d32; }
 .flip-avatar--azul    { background: #1565c0; }
 .flip-avatar--violeta { background: #6a1b9a; }
 .flip-avatar--rojo    { background: #c62828; }
 .flip-avatar--naranja { background: #e65100; }
 
-.flip-nombre {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 0;
-}
-.flip-ciudad {
-  font-size: .85rem;
-  color: var(--color-text-muted);
-}
-.flip-hint {
-  font-size: .78rem;
-  color: var(--color-text-muted);
-  margin-top: var(--space-sm);
-}
-
-/* Dorso */
-.flip-nombre-back {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: var(--space-sm);
-  width: 100%;
-}
-
-.flip-detalles {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-md);
-  flex: 1;
-}
-.flip-detalles li {
-  font-size: .88rem;
-  color: rgba(255,255,255,.9);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-
-
+/* ============================================================
+    RATING CON jQuery (Corregido)
+============================================================ */
 .rating {
   display: flex;
-  flex-direction: row-reverse;   /* invertir orden visual */
-  gap: 2px;
-  margin: var(--space-xs) 0;
+  gap: 5px;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
-/* Esconder los radio buttons reales */
-.star-input { display: none; }
-
-/* Cada estrella */
-.star {
-  font-size: 1.5rem;
-  color: var(--color-border);    /* gris por defecto */
+.star-btn {
+  font-size: 1.4rem;
+  color: #ccc; /* Gris por defecto */
   cursor: pointer;
-  transition: color var(--transition), transform var(--transition);
+  transition: all 0.2s ease;
 }
 
-/* Estrellas seleccionadas (las que siguen al radio checked) */
-.star-input:checked ~ .star-input ~ label.star,
-.star-input:checked ~ label.star {
-  color: var(--color-accent);
+/* Estas clases las maneja agencias.js */
+.star-btn.filled {
+  color: #ffc107; /* Amarillo/Dorado al estar seleccionada */
 }
 
-/* Hover: iluminar la estrella hovered y todas las "anteriores" */
-.rating:hover .star             { color: var(--color-border); }
-.star:hover,
-.star:hover ~ .star-input ~ label.star,
-.star:hover ~ label.star {
-  color: var(--color-accent);
+.star-btn.hover {
+  color: #ffdb58; /* Color más suave al pasar el mouse */
   transform: scale(1.2);
 }
 
-
 /* ============================================================
-   RESPONSIVO
+    DETALLES Y LISTA
 ============================================================ */
-@media (max-width: 640px) {
-  .agencias-grid {
-    grid-template-columns: 1fr;
-  }
+.flip-detalles {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
 
-  /* En mobile el flip se activa con :focus (tap) */
-  .flip-card { height: 320px; }
+.flip-detalles li {
+  font-size: .85rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flip-detalles i { width: 16px; text-align: center; }
+
+@media (max-width: 640px) {
+  .flip-card { height: 380px; }
 }

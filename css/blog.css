@@ -1,8 +1,3 @@
-/* ============================================================
-   blog.css — Diseño tipo revista, filtros, avatares CSS,
-              scroll reveal
-============================================================ */
-
 .page-hero {
   background:
     linear-gradient(rgba(10,6,0,.55), rgba(10,6,0,.65)),
@@ -208,11 +203,7 @@
 
 .read-time { font-size: .78rem; color: var(--color-text-muted); white-space: nowrap; }
 
-/* ============================================================
-   AVATARES CON CSS + PSEUDOELEMENTOS
-   El avatar se crea con un div de color + ::after que muestra
-   las iniciales. No hay texto en el HTML, todo CSS.
-============================================================ */
+
 .author-avatar,
 .com-avatar {
   width: 38px; height: 38px;
@@ -250,7 +241,7 @@
 /* ============================================================
    SCROLL REVEAL
    Los elementos con .reveal empiezan invisibles y abajo.
-   La clase .revealed (agregada con JS) los hace aparecer.
+   La clase .revealed  los hace aparecer.
 ============================================================ */
 .reveal {
   opacity: 0;
@@ -338,7 +329,7 @@
 .com-form { display: flex; flex-direction: column; gap: var(--space-md); }
 .com-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
 
-/* Inputs del formulario comentario (hereda de styles.css) */
+/* Inputs del formulario comentario */
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-label { font-size: .88rem; font-weight: 600; }
 .form-input {
